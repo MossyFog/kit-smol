@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=3 uid="uid://xa55c4w1wd1w"]
 
-[ext_resource type="Texture2D" uid="uid://bpsvhrf8742n6" path="res://assets/cc0/tinycat_kirisoft/1 bit cat sprite sheet outlined.png" id="1_gkly7"]
+[ext_resource type="Texture2D" uid="uid://mwf16jbtdyhk" path="res://assets/cc0/tinycat_kirisoft/1 bit cat sprite sheet outlined.png" id="1_gkly7"]
 [ext_resource type="Script" uid="uid://dw7pt0ynf8f1m" path="res://scenes/playables/tiny_cat.gd" id="1_mteru"]
 [ext_resource type="Script" uid="uid://bg21wqrnagm8g" path="res://scenes/sprite.gd" id="3_cqsv7"]
 
