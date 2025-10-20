@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6mw1wvhx5lct"]
+
+[ext_resource type="Script" uid="uid://bbhyblvndi4kc" path="res://assets/collectable.gd" id="1_jhk65"]
+
+[node name="Collectable" type="Node2D"]
+script = ExtResource("1_jhk65")

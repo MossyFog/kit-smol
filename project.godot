@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="KIT SMOL"
+config/description="Kit Smol bounces ~ *can* you be-leaf it? Oh my meow!"
+config/version="1.0.2"
 run/main_scene="uid://dtqkegnm2kqpn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.5376049, 0.81795216, 0, 1)
+boot_splash/image="uid://bw3270kkiixr2"
+config/icon="uid://bd5144ubv0lih"
+boot_splash/minimum_display_time=280
 
 [autoload]
 
