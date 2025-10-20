@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4sapj2rrxq2f"]
+
+[sub_resource type="Gradient" id="Gradient_cqsv7"]
+offsets = PackedFloat32Array(0, 0.2536232, 0.65217394)
+colors = PackedColorArray(0, 0, 0, 1, 0.015686275, 1, 1, 1, 0.6627451, 0.9882353, 0.29803923, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tq5vg"]
+gradient = SubResource("Gradient_cqsv7")
+width = 10
+
+[sub_resource type="GDScript" id="GDScript_cqsv7"]
+resource_name = "swordy"
+script/source = "
+extends Polygon2D
+
+var original_colors : PackedColorArray
+var gradient_colors : PackedColorArray
+var tw : Tween
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	original_colors.push_back(Color(0.0, 0.0, 0.0))
+	original_colors.push_back(Color(0.016, 1.0, 1.0))
+	original_colors.push_back(Color(0.663, 0.988, 0.298))
+	texture.gradient.colors = original_colors
+	tw = create_tween()
+	gradient_colors = texture.gradient.colors
+	tw.bind_node(self) # do I need dis? hmm
+	tw.set_ease(Tween.EASE_IN_OUT)
+	tw.set_trans(Tween.TRANS_SINE)
+	tw.set_loops(INF) # uhhh, yeahhhh :D
+	gradient_colors[1] = Color.BLUE
+	
+	tw.tween_property(self, \"colors\"[0], gradient_colors[0], 10.0)
+	tw.tween_property(self, \"colors\"[1], gradient_colors[1], 10.0)
+	tw.tween_property(self, \"colors\"[2], gradient_colors[2], 10.0)
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_yvf3t"]
+script/source = "@tool
+extends Label
+
+var tw : Tween
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	add_theme_color_override(\"font_color\", Color.WHITE)
+	add_theme_color_override(\"font_outline_color\", Color.BLACK)
+	tw = create_tween()
+	tw.bind_node(self) # do I need dis? hmm
+	tw.set_ease(Tween.EASE_IN_OUT)
+	tw.set_trans(Tween.TRANS_BOUNCE)
+	tw.set_loops(INF) # uhhh, yeahhhh :D
+	tw.tween_property(self, \"theme_override_colors/font_color\", Color.RED, 50.0)
+	tw.tween_property(self, \"theme_override_colors/font_outline\", Color.WHITE, 20.0)
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Polygon2D" type="Polygon2D"]
+rotation = 0.34508473
+offset = Vector2(-1.285, -1.115)
+antialiased = true
+texture = SubResource("GradientTexture1D_tq5vg")
+texture_offset = Vector2(-0.82, 0)
+texture_scale = Vector2(1.22, 1.22)
+texture_rotation = 0.7766715
+polygon = PackedVector2Array(3.5057483, -5.6339846, 3.8275673, -4.894773, 2.345129, -0.3867541, 3.3819027, 0.2308239, 2.7049541, 1.4724925, 2.422594, 0.51318395, 1.7456458, 1.7548525, 1.9261043, 2.3686848, 1.2652678, 2.3547096, 0.9059987, 2.0017922, 0.7701657, 1.4517647, 1.3356432, 1.5313343, 1.6136279, 0.3862472, 0.44376433, -1.0206801, 1.6890607, -0.54390115, 2.7100654, -5.504027)
+script = SubResource("GDScript_cqsv7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.469465
+offset_top = -8.242406
+offset_right = 48.469467
+offset_bottom = 14.757594
+scale = Vector2(0.15315497, 0.15315497)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 14
+text = "Just making,
+no plans :3
+
+Well okies I wanna
+throw 'em meow"
+script = SubResource("GDScript_yvf3t")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=53 format=3 uid="uid://xa55c4w1wd1w"]
+[gd_scene load_steps=54 format=3 uid="uid://xa55c4w1wd1w"]
 
 [ext_resource type="Texture2D" uid="uid://mwf16jbtdyhk" path="res://assets/cc0/tinycat_kirisoft/1 bit cat sprite sheet outlined.png" id="1_gkly7"]
 [ext_resource type="Script" uid="uid://dw7pt0ynf8f1m" path="res://scenes/playables/tiny_cat.gd" id="1_mteru"]
 [ext_resource type="Script" uid="uid://bg21wqrnagm8g" path="res://scenes/sprite.gd" id="3_cqsv7"]
+[ext_resource type="PackedScene" uid="uid://b4sapj2rrxq2f" path="res://scenes/testing/sworb-n-text/polygon_2d.tscn" id="4_tq5vg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eux3g"]
 atlas = ExtResource("1_gkly7")
@@ -403,23 +404,28 @@ myArea = NodePath("Area2D")
 [node name="Sprite" type="AnimatedSprite2D" parent="Area2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7vcp7")
-animation = &"run"
-frame_progress = 0.45980942
 script = ExtResource("3_cqsv7")
 
 [node name="CoreCollision" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, 5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_n6x4n")
 
 [node name="OuterCollision" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, 5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_mteru")
 debug_color = Color(0.8156863, 0.68235296, 0.9647059, 0.23921569)
 
 [node name="HeadCollision" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(1, 3)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_smecq")
 debug_color = Color(0.9411765, 0.6862745, 0.5137255, 0.12156863)
+
+[node name="Polygon2D" parent="." instance=ExtResource("4_tq5vg")]
+visible = false
+position = Vector2(4.655098, 3.6295757)
