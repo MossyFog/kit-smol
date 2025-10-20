@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=4 uid="uid://bwrkx8u1i1jrm"]
+
+[ext_resource type="PackedScene" uid="uid://xa55c4w1wd1w" path="res://scenes/tiny_cat.tscn" id="1_ax7le"]
+[ext_resource type="PackedScene" uid="uid://bbq8lwc6sdsgd" path="res://scenes/safety_grate.tscn" id="2_pkn2j"]
+[ext_resource type="Texture2D" uid="uid://rhukjdkpus85" path="res://assets/md0/md0-mossyfog_saftey-grate_p220928.png" id="3_a1uam"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gcriy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g752"]
+texture = ExtResource("3_a1uam")
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/1 = 1
+0:0/2 = 2
+0:0/3 = 3
+
+[sub_resource type="TileSet" id="TileSet_kext1"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_1g752")
+
+[node name="LevelTest01" type="Node2D"]
+
+[node name="TinyCat" parent="." instance=ExtResource("1_ax7le")]
+
+[node name="Camera2D" type="Camera2D" parent="TinyCat"]
+zoom = Vector2(3, 3)
+
+[node name="Floor001" type="Node2D" parent="."]
+position = Vector2(33, 21)
+
+[node name="SafetyGrate" parent="Floor001" instance=ExtResource("2_pkn2j")]
+position = Vector2(-33, -4)
+
+[node name="SafetyGrate2" parent="Floor001" instance=ExtResource("2_pkn2j")]
+position = Vector2(-15, 0)
+
+[node name="SafetyGrate3" parent="Floor001" instance=ExtResource("2_pkn2j")]
+position = Vector2(16, 5)
+
+[node name="SafetyGrate4" parent="Floor001" instance=ExtResource("2_pkn2j")]
+position = Vector2(32, 5)
+
+[node name="SafetyGrate5" parent="Floor001" instance=ExtResource("2_pkn2j")]
+position = Vector2(48, 5)
+
+[node name="Area2DBoundary" type="Area2D" parent="."]
+position = Vector2(0, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DBoundary"]
+shape = SubResource("WorldBoundaryShape2D_gcriy")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.10980392)
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAAAAP//AAAAAAAAAAACAP7/AAAAAAAAAAD8/wAAAAAAAAAAAAAEAAAAAAAAAAAAAAD7//7/AAAAAAAAAAAGAAIAAAAAAAAAAAD6/wIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_kext1")
+
+[node name="Parallax2D" type="Parallax2D" parent="TileMapLayer"]
