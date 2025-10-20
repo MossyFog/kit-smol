@@ -404,7 +404,7 @@ myArea = NodePath("Area2D")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7vcp7")
 animation = &"run"
-frame_progress = 0.7406953
+frame_progress = 0.45980942
 script = ExtResource("3_cqsv7")
 
 [node name="CoreCollision" type="CollisionShape2D" parent="Area2D"]

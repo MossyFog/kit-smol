@@ -13,6 +13,7 @@ var timeToRespawnAfterBoundary : float = 2.0
 @onready var lockspot := StaticBody2D.new()
 @onready var springjoint := DampedSpringJoint2D.new()
 var _tether_is_bound : bool
+@onready var startPos : Vector2
 
 # Built-in func 
 # 🌟
@@ -24,6 +25,7 @@ func _ready() -> void:
 	add_child(rigid)
 	# Tether/spring/joint
 	tether_manifest()
+	startPos = rigid.position
 	
 
 # ⚙️
@@ -51,12 +53,16 @@ func _process(delta: float) -> void:
 	if (pressing_up):    #⬆️⬆
 		scooch(boop_up * 1.50)
 	
+	queue_redraw()
 
 func _draw() -> void:
-	draw_circle(rigid.position, 5.0, Color.ORANGE_RED, false, 2.0, true)
-	draw_circle(springjoint.position, 5.0, Color.YELLOW, false, 2.0, true)
-	draw_circle(lockspot.position, 5.0, Color.RED, false, 2.0, true)
+	draw_line(lockspot.position, rigid.position, Color.RED, 1.2)
 	
+	draw_circle(rigid.position,       5.0, Color.ORANGE_RED, false, 2.0, true)
+	draw_circle(springjoint.position, 5.0, Color.BLUE, false, 2.0, true)
+	draw_circle(lockspot.position,    5.0, Color.GREEN, false, 2.0, true)
+	
+
 
 # Public func
 # 🛞
@@ -72,18 +78,26 @@ func screech() -> void:
 # ⛓️
 func tether_manifest() -> void:
 	lockspot = StaticBody2D.new()
-	springjoint = DampedSpringJoint2D.new()
-	springjoint.length = 50.0
-	springjoint.stiffness = 20.0
 	lockspot.position = rigid.position
-	draw_circle(rigid.position, 5.0, Color.ORANGE_RED, false, 2.0, true)
+	var circle = CircleShape2D.new()
+	
+	lockspot.shape_owner_add_shape(0, circle)
+	
+	springjoint = DampedSpringJoint2D.new()
+	springjoint.position = rigid.position
+	springjoint.length = 10.0
+	springjoint.stiffness = 50.0
+	
 	add_child(lockspot)
 	add_child(springjoint)
+	
 	print("tether manifested")
 
 # 🔗
 func tether_bind(tether : Joint2D, a : PhysicsBody2D, b : PhysicsBody2D) -> void:
 	if (_tether_is_bound == false):
+		springjoint.position = rigid.position
+		lockspot.position = rigid.position
 		print("tether not bound (tether_bind)")
 		tether.process_mode = Node.PROCESS_MODE_INHERIT
 		tether.node_a = get_path_to(a)
@@ -96,8 +110,10 @@ func tether_bind(tether : Joint2D, a : PhysicsBody2D, b : PhysicsBody2D) -> void
 func tether_cut(tether : Joint2D) -> void:
 	print("Cutting tether (tether_cut)")
 	tether.process_mode = Node.PROCESS_MODE_DISABLED
-	#tether.node_a = null
-	#tether.node_b = null
+	# Disconnect all nodes... somehow.. hmmmm
+	tether.node_a = get_path_to(self)
+	tether.node_b = get_path_to(self)
+
 
 # ⚡
 func respawn() -> void:
