@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://rhukoj80kgmq"]
+
+[ext_resource type="Script" uid="uid://b7e1ql3sxs6gs" path="res://scenes/testing/sidequest-vector/main_control.gd" id="1_3jnx6"]
+[ext_resource type="PackedScene" uid="uid://d3uwhqietc2vl" path="res://scenes/fuel_hud.tscn" id="2_422ur"]
+[ext_resource type="PackedScene" uid="uid://dt0mpk8o5m6an" path="res://scenes/testing/intermission.tscn" id="2_d73ye"]
+
+[node name="MainControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jnx6")
+
+[node name="FuelHUD" parent="." instance=ExtResource("2_422ur")]
+layout_mode = 1
+
+[node name="Intermission" parent="." instance=ExtResource("2_d73ye")]
+visible = false
+position = Vector2(532, -12)

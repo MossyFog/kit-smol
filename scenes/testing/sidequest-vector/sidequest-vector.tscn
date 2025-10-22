@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dj3rgxou63vis"]
 
-[ext_resource type="Script" uid="uid://b7e1ql3sxs6gs" path="res://scenes/testing/sidequest-vector/control.gd" id="1_t10ks"]
+[ext_resource type="Script" uid="uid://b7e1ql3sxs6gs" path="res://scenes/testing/sidequest-vector/main_control.gd" id="1_t10ks"]
 
 [node name="SidequestVector" type="Node2D"]
 

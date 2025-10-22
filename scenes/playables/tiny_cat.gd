@@ -1,19 +1,24 @@
 @icon("res://assets/cc0/tinycat_kirisoft/tinycat11x11.png")
 class_name TinyCat extends Node2D
 
-@export var myArea : Area2D
+signal spend_fuel(cost : float)
+
+@export var myArea : Area2D # Caution: Get's turned into 'rigid'
 @export var myCamera : Camera2D
 @export var scooch_right := Vector2(  8.0,   0.0)
 @export var scooch_left  := Vector2( -8.0,   0.0)
 @export var boop_up      := Vector2(  0.0, -18.5)
+
 var rigid : RigidBody2D
 var respawnTimer : Timer
 var timeToRespawnAfterBoundary : float = 2.0
+var fuel_cost : float = 0.01
+var _tether_is_bound : bool
+
+@onready var startPos : Vector2
 @onready var spawnPosition : Vector2 = self.position
 @onready var lockspot := StaticBody2D.new()
 @onready var springjoint := DampedSpringJoint2D.new()
-var _tether_is_bound : bool
-@onready var startPos : Vector2
 
 # Built-in func 
 # 🌟
@@ -29,14 +34,16 @@ func _ready() -> void:
 	
 
 # ⚙️
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Check inputs ⌨️
 	var pressing_left  : bool = Input.is_action_pressed("left")
 	var pressing_right : bool = Input.is_action_pressed("right")
-	var pressing_jump  : bool = Input.is_action_pressed("jump")
 	var pressing_down  : bool = Input.is_action_pressed("down")
-	var pressing_up    : bool = Input.is_key_pressed(KEY_W)
-	var released_up    : bool = Input.is_action_just_released("down")
+	var pressing_up    : bool = Input.is_action_pressed("up")
+	var released_up : bool = Input.is_action_just_released("down")
+	var pressing_jump  : bool = Input.is_action_pressed("jump")
+	var scroll_up      : bool = Input.is_action_pressed("scroll_up")
+	var scroll_down    : bool = Input.is_action_pressed("scroll_down")
 	
 	# Do inputs 🎬
 	if (pressing_left):  #⬅️
@@ -45,13 +52,20 @@ func _process(delta: float) -> void:
 		scooch(scooch_right)
 	if (pressing_jump):  #⬆
 		scooch(boop_up)
+	if Input.is_action_just_pressed("down"):
+		tether_bind(springjoint, lockspot, rigid)
 	if (pressing_down):  #⬇️
 		screech()
-		tether_bind(springjoint, lockspot, rigid)
 	if(released_up):     #🛑⬆️
 		tether_cut(springjoint)
 	if (pressing_up):    #⬆️⬆
 		scooch(boop_up * 1.50)
+	if (scroll_up):
+		print("scrollyup")
+		myCamera.zoom += Vector2(0.1, 0.1)
+	if (scroll_down):
+		print("scrollydown")
+		myCamera.zoom -= Vector2(0.1, 0.1)
 	
 	queue_redraw()
 
@@ -69,6 +83,7 @@ func _draw() -> void:
 func scooch(dir : Vector2) -> void:
 	# Scooch
 	rigid.apply_impulse(dir)
+	emit_signal("spend_fuel", fuel_cost)
 
 # 🛑
 func screech() -> void:
@@ -81,7 +96,7 @@ func tether_manifest() -> void:
 	lockspot.position = rigid.position
 	var circle = CircleShape2D.new()
 	
-	lockspot.shape_owner_add_shape(0, circle)
+	lockspot.shape_owner_add_shape(1, circle)
 	
 	springjoint = DampedSpringJoint2D.new()
 	springjoint.position = rigid.position
@@ -111,8 +126,10 @@ func tether_cut(tether : Joint2D) -> void:
 	print("Cutting tether (tether_cut)")
 	tether.process_mode = Node.PROCESS_MODE_DISABLED
 	# Disconnect all nodes... somehow.. hmmmm
-	tether.node_a = get_path_to(self)
-	tether.node_b = get_path_to(self)
+	#tether.node_a = get_path_to(self)
+	#tether.node_b = get_path_to(self)
+	remove_child($"tether.node_a")
+	remove_child($"tether.node_b")
 
 
 # ⚡
@@ -131,7 +148,7 @@ func _start_respawn_timer() -> void:
 
 # Signals
 # ⛔
-func _on_area_2d_boundary_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_area_2d_boundary_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	_start_respawn_timer()
 	
 

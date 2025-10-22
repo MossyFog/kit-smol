@@ -24,6 +24,7 @@ sources/0 = SubResource("TileSetAtlasSource_1g752")
 pattern_0 = SubResource("TileMapPattern_bi5lt")
 
 [node name="LevelSetStuffTest01" type="Node2D"]
+texture_filter = 1
 
 [node name="FloorTiles01" type="Node2D" parent="."]
 position = Vector2(33, 21)
@@ -317,5 +318,20 @@ limit_end = Vector2(10000, 10000)
 [node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D"]
 modulate = Color(1, 1, 1, 0.10980392)
 texture_filter = 1
+tile_map_data = PackedByteArray("AAAGAAIAAAAAAAAAAAD6/wIAAAAAAAAAAAD7//7/AAAAAAAAAAD8/wAAAAAAAAAAAAD+////AAAAAAAAAAACAP7/AAAAAAAAAAAEAAAAAAAAAAAAAAAAAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_kext1")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.2, 1.2)
+repeat_size = Vector2(140.22, 103.52)
+repeat_times = 14
+limit_begin = Vector2(-10000, -10000)
+limit_end = Vector2(10000, 10000)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="Parallax2D2"]
+modulate = Color(1, 1, 1, 0.02745098)
+texture_filter = 1
+position = Vector2(-16.415, 0)
+skew = -0.43633232
 tile_map_data = PackedByteArray("AAAGAAIAAAAAAAAAAAD6/wIAAAAAAAAAAAD7//7/AAAAAAAAAAD8/wAAAAAAAAAAAAD+////AAAAAAAAAAACAP7/AAAAAAAAAAAEAAAAAAAAAAAAAAAAAP//AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_kext1")

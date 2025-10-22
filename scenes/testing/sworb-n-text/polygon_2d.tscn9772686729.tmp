@@ -11,46 +11,36 @@ var sword_gradient_res : GradientTexture1D = preload(\"res://scenes/testing/swor
 var original_colors : PackedColorArray
 var gradient_colors : PackedColorArray
 var tw : Tween
-var col1 : Color
-var col2 : Color
-var col3 : Color
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Set original colors, since \"tool\" is gonna fuzz 'em uppp
-	original_colors.push_back(Color(0.0, 0.0, 0.0, 1.0))
-	original_colors.push_back(Color(0.016, 1.0, 1.0, 1.0))
-	original_colors.push_back(Color(0.663, 0.988, 0.298, 1.0))
-	sword_gradient_res.gradient.set_color(0, original_colors[0])
-	sword_gradient_res.gradient.set_color(1, original_colors[1])
-	sword_gradient_res.gradient.set_color(2, original_colors[2])
+	original_colors.push_back(Color(0.0, 0.0, 0.0))
+	original_colors.push_back(Color(0.016, 1.0, 1.0))
+	original_colors.push_back(Color(0.663, 0.988, 0.298))
 	
+	texture.gradient.colors = original_colors
 	gradient_colors.push_back(Color(1.0, 1.0, 1.0, 1.0))
 	gradient_colors.push_back(Color(0.843, 0.322, 1.0, 1.0))
 	gradient_colors.push_back(Color(1.0, 0.0, 0.298, 1.0))
-	
-	col1 = original_colors[0]
-	col2 = original_colors[1]
-	col3 = original_colors[2]
 	
 	tw = create_tween()
 	tw.bind_node(self) # do I need dis? hmm
 	tw.set_ease(Tween.EASE_IN_OUT)
 	tw.set_trans(Tween.TRANS_SINE)
-	tw.set_loops(20) # uhhh, yeahhhh :D
+	tw.set_loops(INF) # uhhh, yeahhhh :D
 	
 	tw.set_parallel(true)
-	tw.tween_property(self, ^\"col1\", gradient_colors[0], 10.0)
-	tw.tween_property(self, ^\"col2\", gradient_colors[1], 10.0)
-	tw.tween_property(self, ^\"col3\", gradient_colors[2], 10.0)
+	tw.tween_property(self, ^\"sword_gradient_res:gradient.colors[0]:r\",
+	 sword_gradient_res.gradient.colors[0].r, 10.0)
+	tw.tween_property(self, ^\"sword_gradient_res:gradient.colors[0]:g\",
+	 sword_gradient_res.gradient.colors[0].g, 10.0)
+	tw.tween_property(self, ^\"sword_gradient_res:gradient.colors[0]:b\" ,
+	 sword_gradient_res.gradient.colors[0].b, 10.0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if (tw.is_running()):
-		print_verbose(col1)
-		sword_gradient_res.gradient.set_color(0, col1)
-		sword_gradient_res.gradient.set_color(1, col2)
-		sword_gradient_res.gradient.set_color(2, col3)
+func _process(delta: float) -> void:
+	pass
 "
 
 [sub_resource type="GDScript" id="GDScript_yvf3t"]
@@ -58,31 +48,36 @@ script/source = "@tool
 extends Label
 
 var tw : Tween
+var tw2 : Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_theme_color_override(\"font_color\", Color.WHITE)
 	add_theme_color_override(\"font_outline_color\", Color.BLACK)
-	
 	tw = create_tween()
+	tw2 = create_tween()
 	tw.bind_node(self) # do I need dis? hmm
+	tw2.bind_node(self) # do I still need dis? hmmmm
 	
 	tw.set_ease(Tween.EASE_IN_OUT)
 	tw.set_trans(Tween.TRANS_BOUNCE)
-	tw.set_loops(20) # uhhh, yeahhhh :D
+	tw.set_loops(INF) # uhhh, yeahhhh :D
 	
-	tw.set_parallel(true)
+	tw2.set_ease(Tween.EASE_IN_OUT)
+	tw2.set_trans(Tween.TRANS_BOUNCE)
+	tw2.set_loops(INF) # uhhh, yeahhhh >:D
+	
 	tw.tween_property(self, \"theme_override_colors/font_color\", Color.RED, 10.0)
-	tw.tween_property(self, \"theme_override_colors/font_outline_color\", Color.WHITE, 10.0)
+	tw2.tween_property(self, \"theme_override_colors/font_outline_color\", Color.WHITE, 10.0)
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
 "
 
-[node name="Sworb" type="Polygon2D"]
+[node name="Polygon2D" type="Polygon2D"]
 rotation = 0.34508473
 offset = Vector2(-1.285, -1.115)
 antialiased = true
@@ -90,7 +85,7 @@ texture = ExtResource("1_3vuff")
 texture_offset = Vector2(-0.82, 0)
 texture_scale = Vector2(1.22, 1.22)
 texture_rotation = 0.7766715
-polygon = PackedVector2Array(3.4848769, -5.639629, 3.8095548, -4.901669, 2.3445776, -0.38794547, 3.383734, 0.22561474, 2.711597, 1.4698943, 2.4255257, 0.51168597, 1.7533886, 1.7559657, 1.9362218, 2.3690948, 1.2753363, 2.3576777, 0.9147037, 2.0061536, 0.7767427, 1.456656, 1.3425239, 1.534036, 1.6160741, 0.38788158, 0.44077325, -1.0145068, 1.6879059, -0.5425518, 2.689703, -5.5065923)
+polygon = PackedVector2Array(3.5057483, -5.6339846, 3.8275673, -4.894773, 2.345129, -0.3867541, 3.3819027, 0.2308239, 2.7049541, 1.4724925, 2.422594, 0.51318395, 1.7456458, 1.7548525, 1.9261043, 2.3686848, 1.2652678, 2.3547096, 0.9059987, 2.0017922, 0.7701657, 1.4517647, 1.3356432, 1.5313343, 1.6136279, 0.3862472, 0.44376433, -1.0206801, 1.6890607, -0.54390115, 2.7100654, -5.504027)
 script = SubResource("GDScript_cqsv7")
 
 [node name="Label" type="Label" parent="."]
@@ -100,7 +95,7 @@ offset_right = 48.469467
 offset_bottom = 14.757594
 scale = Vector2(0.15315497, 0.15315497)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 14
 text = "Just making,
@@ -109,10 +104,3 @@ no plans :3
 Well okies I wanna
 throw 'em meow"
 script = SubResource("GDScript_yvf3t")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-texture = ExtResource("1_3vuff")
-texture_offset = Vector2(3.095, 0)
-texture_scale = Vector2(2.1, 2.1)
-texture_rotation = -5.052728
-polygon = PackedVector2Array(0, 0, 4, 0, 4, 4, 0, 4)

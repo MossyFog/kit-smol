@@ -9,5 +9,5 @@ func _enter_tree() -> void:
 	print("Sprite: Entered Tree #", counter)
 	counter += 1
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

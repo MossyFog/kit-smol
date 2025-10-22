@@ -9,10 +9,12 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	size.x = viewport_width  #* $"../Camera2D".zoom
-	size.y = viewport_height #* $"../Camera2D".zoom
+	#size.x = viewport_width  #* $"../Camera2D".zoom
+	#size.y = viewport_height #* $"../Camera2D".zoom
+	pass
 
 
 func _on_camera_2d_item_rect_changed() -> void:
-	size.x = viewport_width  #* $"../Camera2D".zoom
-	size.y = viewport_height #* $"../Camera2D".zoom
+	#size.x = viewport_width  #* $"../Camera2D".zoom
+	#size.y = viewport_height #* $"../Camera2D".zoom
+	pass
