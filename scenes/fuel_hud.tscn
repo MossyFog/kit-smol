@@ -25,13 +25,11 @@ func _on_tiny_cat_spend_fuel(cost : float) -> float:
 [node name="FuelHUD" type="Control"]
 modulate = Color(0.02745098, 1, 1, 0.3764706)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -352.0
-offset_bottom = -248.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 42.335
+offset_bottom = 126.515
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(0, 120)

@@ -1,0 +1,203 @@
+[gd_scene load_steps=4 format=3 uid="uid://rhukoj80kgmq"]
+
+[ext_resource type="Script" uid="uid://b7e1ql3sxs6gs" path="res://scenes/testing/sidequest-vector/main_control.gd" id="1_3jnx6"]
+[ext_resource type="PackedScene" uid="uid://d3uwhqietc2vl" path="res://scenes/fuel_hud.tscn" id="2_422ur"]
+[ext_resource type="PackedScene" uid="uid://dt0mpk8o5m6an" path="res://scenes/testing/intermission.tscn" id="2_d73ye"]
+
+[node name="MainControl" type="CanvasLayer"]
+script = ExtResource("1_3jnx6")
+
+[node name="MarginMain" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -752.0
+offset_bottom = -448.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HFlowContainer" type="HBoxContainer" parent="MarginMain"]
+layout_mode = 2
+
+[node name="FuelHUD" parent="MarginMain/HFlowContainer" instance=ExtResource("2_422ur")]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 2
+
+[node name="DevTools" type="Control" parent="MarginMain/HFlowContainer"]
+modulate = Color(1, 0.81178766, 0.86981654, 0.43500003)
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DevToolsButton" type="Button" parent="MarginMain/HFlowContainer/DevTools"]
+layout_mode = 1
+offset_right = 52.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "🛠️"
+
+[node name="MainMenu" type="Control" parent="MarginMain/HFlowContainer"]
+modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MainMenuButton" type="Button" parent="MarginMain/HFlowContainer/MainMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "MAIN MENU"
+
+[node name="MarginMain2" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1152.0
+offset_top = 648.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -3.1415927
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HFlowContainer" type="HBoxContainer" parent="MarginMain2"]
+layout_mode = 2
+
+[node name="FuelHUD" parent="MarginMain2/HFlowContainer" instance=ExtResource("2_422ur")]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 2
+
+[node name="DevTools" type="Control" parent="MarginMain2/HFlowContainer"]
+modulate = Color(1, 0.81178766, 0.86981654, 0.43500003)
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DevToolsButton" type="Button" parent="MarginMain2/HFlowContainer/DevTools"]
+layout_mode = 1
+offset_right = 52.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "🛠️"
+
+[node name="MainMenu" type="Control" parent="MarginMain2/HFlowContainer"]
+modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MainMenuButton" type="Button" parent="MarginMain2/HFlowContainer/MainMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "MAIN MENU"
+
+[node name="MarginMain3" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1152.0
+offset_right = 400.0
+offset_bottom = -448.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HFlowContainer" type="HBoxContainer" parent="MarginMain3"]
+layout_mode = 2
+
+[node name="FuelHUD" parent="MarginMain3/HFlowContainer" instance=ExtResource("2_422ur")]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 2
+
+[node name="DevTools" type="Control" parent="MarginMain3/HFlowContainer"]
+modulate = Color(1, 0.81178766, 0.86981654, 0.43500003)
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DevToolsButton" type="Button" parent="MarginMain3/HFlowContainer/DevTools"]
+layout_mode = 1
+offset_right = 52.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "🛠️"
+
+[node name="MainMenu" type="Control" parent="MarginMain3/HFlowContainer"]
+modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MainMenuButton" type="Button" parent="MarginMain3/HFlowContainer/MainMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "MAIN MENU"
+
+[node name="MarginMain4" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 648.0
+offset_right = -752.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HFlowContainer" type="HBoxContainer" parent="MarginMain4"]
+layout_mode = 2
+
+[node name="FuelHUD" parent="MarginMain4/HFlowContainer" instance=ExtResource("2_422ur")]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 2
+
+[node name="DevTools" type="Control" parent="MarginMain4/HFlowContainer"]
+modulate = Color(1, 0.81178766, 0.86981654, 0.43500003)
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DevToolsButton" type="Button" parent="MarginMain4/HFlowContainer/DevTools"]
+layout_mode = 1
+offset_right = 52.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "🛠️"
+
+[node name="MainMenu" type="Control" parent="MarginMain4/HFlowContainer"]
+modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MainMenuButton" type="Button" parent="MarginMain4/HFlowContainer/MainMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "MAIN MENU"
+
+[node name="Intermission" parent="." instance=ExtResource("2_d73ye")]
+visible = false
+position = Vector2(532, -12)

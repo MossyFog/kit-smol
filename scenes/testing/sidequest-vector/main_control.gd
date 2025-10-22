@@ -1,5 +1,6 @@
+# Main Control
 @tool
-extends Control
+extends CanvasLayer
 
 @onready var viewport_width = ProjectSettings.get_setting("display/window/size/viewport_width")
 @onready var viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")

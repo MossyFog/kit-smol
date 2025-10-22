@@ -1,25 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtqkegnm2kqpn"]
 
-[ext_resource type="PackedScene" uid="uid://rhukoj80kgmq" path="res://scenes/main_control.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://rhukoj80kgmq" path="res://scenes/main_canvas.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bwrkx8u1i1jrm" path="res://scenes/testing/level_test_01.tscn" id="1_ig7tw"]
 
 [node name="Main" type="Node"]
 
-[node name="MainControl" parent="." instance=ExtResource("1_0xm2m")]
-offset_left = -141.0
-offset_top = -77.0
-offset_right = 114.0
-offset_bottom = 66.0
-
-[node name="FuelHUD" parent="MainControl" index="0"]
-scale = Vector2(0.5, 0.5)
+[node name="MainCanvas" parent="." instance=ExtResource("1_0xm2m")]
 
 [node name="Main2D" parent="." instance=ExtResource("1_ig7tw")]
 
-[connection signal="spend_fuel" from="Main2D/TinyCat" to="MainControl/FuelHUD/PanelContainer/HBoxContainer/VSlider" method="_on_tiny_cat_spend_fuel"]
+[connection signal="spend_fuel" from="Main2D/TinyCat" to="MainCanvas/MarginMain/HFlowContainer/FuelHUD/PanelContainer/HBoxContainer/VSlider" method="_on_tiny_cat_spend_fuel"]
+[connection signal="spend_fuel" from="Main2D/TinyCat" to="MainCanvas/MarginMain2/HFlowContainer/FuelHUD/PanelContainer/HBoxContainer/VSlider" method="_on_tiny_cat_spend_fuel"]
+[connection signal="spend_fuel" from="Main2D/TinyCat" to="MainCanvas/MarginMain3/HFlowContainer/FuelHUD/PanelContainer/HBoxContainer/VSlider" method="_on_tiny_cat_spend_fuel"]
+[connection signal="spend_fuel" from="Main2D/TinyCat" to="MainCanvas/MarginMain4/HFlowContainer/FuelHUD/PanelContainer/HBoxContainer/VSlider" method="_on_tiny_cat_spend_fuel"]
 
-[editable path="MainControl"]
-[editable path="MainControl/FuelHUD"]
+[editable path="MainCanvas"]
+[editable path="MainCanvas/MarginMain/HFlowContainer/FuelHUD"]
+[editable path="MainCanvas/MarginMain2/HFlowContainer/FuelHUD"]
+[editable path="MainCanvas/MarginMain3/HFlowContainer/FuelHUD"]
+[editable path="MainCanvas/MarginMain4/HFlowContainer/FuelHUD"]
 [editable path="Main2D"]
 [editable path="Main2D/TinyCat"]
 [editable path="Main2D/SpringJointOfKittehs2"]

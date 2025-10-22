@@ -1,3 +1,4 @@
+# Sprite
 extends AnimatedSprite2D
 var counter : int = 1
 

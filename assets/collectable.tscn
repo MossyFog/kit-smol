@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6mw1wvhx5lct"]
+[gd_scene load_steps=5 format=3 uid="uid://b6mw1wvhx5lct"]
 
 [ext_resource type="Script" uid="uid://bbhyblvndi4kc" path="res://assets/collectable.gd" id="1_jhk65"]
 [ext_resource type="SpriteFrames" uid="uid://c0ww7jgjgqqxb" path="res://assets/tiny_cat_spriteframes.tres" id="2_an7uv"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_an7uv"]
+radius = 2.236068
+
 [sub_resource type="GDScript" id="GDScript_an7uv"]
-script/source = "@tool
+script/source = "# Rotatey Skew
+@tool
 extends Node
 
 @export_tool_button(\"SPINNY SPINNY!!!\") var spinny = reset_skew
@@ -70,6 +74,16 @@ skew = 88.99953
 sprite_frames = ExtResource("2_an7uv")
 animation = &"jump"
 
+[node name="Area2D" type="Area2D" parent="KittyCollect"]
+scale = Vector2(1, 2.5829782)
+skew = -0.7101722
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittyCollect/Area2D"]
+position = Vector2(-3, 2)
+shape = SubResource("CircleShape2D_an7uv")
+
 [node name="RotateySkew" type="Node2D" parent="KittyCollect"]
 script = SubResource("GDScript_an7uv")
 speed_idk = 0.008
+
+[connection signal="body_entered" from="KittyCollect/Area2D" to="." method="_on_area_2d_body_entered"]

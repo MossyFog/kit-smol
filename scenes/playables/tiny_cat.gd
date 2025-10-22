@@ -1,29 +1,33 @@
+# Tiny Cat
 @icon("res://assets/cc0/tinycat_kirisoft/tinycat11x11.png")
 class_name TinyCat extends Node2D
+## Tiny Cat is KIT SMOL[br]
+## Isn't that meow?
 
-signal spend_fuel(cost : float)
+signal spend_fuel(cost : float) ## Spend fuel.
 
-@export var myArea : Area2D # Caution: Get's turned into 'rigid'
-@export var myCamera : Camera2D
-@export var scooch_right := Vector2(  8.0,   0.0)
-@export var scooch_left  := Vector2( -8.0,   0.0)
-@export var boop_up      := Vector2(  0.0, -18.5)
+@export var myArea : Area2D ## Caution: Get's turned into 'rigid'.
+@export var myCamera : Camera2D ## Camera to follow.
+@export var scooch_right := Vector2(  8.0,   0.0) ## Scooches right.
+@export var scooch_left  := Vector2( -8.0,   0.0) ## Scooches left.
+@export var boop_up      := Vector2(  0.0, -18.5) ## Boops up.
 
-var rigid : RigidBody2D
-var respawnTimer : Timer
-var timeToRespawnAfterBoundary : float = 2.0
-var fuel_cost : float = 0.01
-var _tether_is_bound : bool
+var rigid : RigidBody2D ## Replaces myArea.
+var respawnTimer : Timer ## Timer until respawn.
+var timeToRespawnAfterBoundary : float = 2.0 ## Time to respawn after crossing
+## world boundary.
+var fuel_cost : float = 0.05 ## Cost of fuel.
+var _tether_is_bound : bool ## Determines if tether is bound.
 
-@onready var startPos : Vector2
-@onready var spawnPosition : Vector2 = self.position
-@onready var lockspot := StaticBody2D.new()
-@onready var springjoint := DampedSpringJoint2D.new()
+@onready var startPos : Vector2 ## Initial start position.
+@onready var spawnPosition : Vector2 = self.position ## Where to spawn.
+@onready var lockspot := StaticBody2D.new() ## Locked body to connect joint to.
+@onready var springjoint := DampedSpringJoint2D.new() ## Spring joint.
 
 # Built-in func 
-# 🌟
+## 🌟
 func _ready() -> void:
-	# For no good reason converting... :3
+	## For no good reason converting... :3
 	rigid = Conversions.area_to_rigid(myArea)
 	remove_child(myArea)
 	myArea.queue_free()
@@ -33,7 +37,7 @@ func _ready() -> void:
 	startPos = rigid.position
 	
 
-# ⚙️
+## ⚙️
 func _process(_delta: float) -> void:
 	# Check inputs ⌨️
 	var pressing_left  : bool = Input.is_action_pressed("left")
@@ -79,18 +83,18 @@ func _draw() -> void:
 
 
 # Public func
-# 🛞
+## 🛞
 func scooch(dir : Vector2) -> void:
 	# Scooch
 	rigid.apply_impulse(dir)
 	emit_signal("spend_fuel", fuel_cost)
 
-# 🛑
+## 🛑
 func screech() -> void:
 	# Brakes / slow / stoppies
 	pass
 
-# ⛓️
+## ⛓️
 func tether_manifest() -> void:
 	lockspot = StaticBody2D.new()
 	lockspot.position = rigid.position
@@ -107,8 +111,9 @@ func tether_manifest() -> void:
 	add_child(springjoint)
 	
 	print("tether manifested")
+	
 
-# 🔗
+## 🔗
 func tether_bind(tether : Joint2D, a : PhysicsBody2D, b : PhysicsBody2D) -> void:
 	if (_tether_is_bound == false):
 		springjoint.position = rigid.position
@@ -121,7 +126,7 @@ func tether_bind(tether : Joint2D, a : PhysicsBody2D, b : PhysicsBody2D) -> void
 	else:
 		print("tether is bound (tether_bind)")
 
-# ⛓️‍💥
+## ⛓️‍💥
 func tether_cut(tether : Joint2D) -> void:
 	print("Cutting tether (tether_cut)")
 	tether.process_mode = Node.PROCESS_MODE_DISABLED
@@ -132,14 +137,14 @@ func tether_cut(tether : Joint2D) -> void:
 	remove_child($"tether.node_b")
 
 
-# ⚡
+## ⚡
 func respawn() -> void:
 	print("Respawning...")
 	self.position = spawnPosition
 
 
 # Private func
-# ⏳
+## ⏳
 func _start_respawn_timer() -> void:
 	respawnTimer = Timer.new()
 	respawnTimer.timeout.connect(_on_respawn_timer_timeout)
@@ -147,11 +152,15 @@ func _start_respawn_timer() -> void:
 
 
 # Signals
-# ⛔
+## ⛔
 func _on_area_2d_boundary_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	_start_respawn_timer()
 	
 
-#⌛
+##⌛
 func _on_respawn_timer_timeout() -> void:
 	respawn()
+
+
+func _on_collectable_send_fuel() -> void:
+	emit_signal("spend_fuel", fuel_cost * -190.0)

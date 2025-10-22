@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://gitspmoyuu1s"]
+[gd_scene load_steps=8 format=4 uid="uid://gitspmoyuu1s"]
 
+[ext_resource type="Script" uid="uid://bowscnnt5yyuf" path="res://scenes/testing/if_hidden_nvm.gd" id="1_d661p"]
 [ext_resource type="PackedScene" uid="uid://bbq8lwc6sdsgd" path="res://scenes/tiles/safety_grate.tscn" id="1_rbog4"]
 [ext_resource type="Texture2D" uid="uid://rhukjdkpus85" path="res://assets/md0/md0-mossyfog_saftey-grate_p220928.png" id="2_d661p"]
 
@@ -25,6 +26,7 @@ pattern_0 = SubResource("TileMapPattern_bi5lt")
 
 [node name="LevelSetStuffTest01" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_d661p")
 
 [node name="FloorTiles01" type="Node2D" parent="."]
 position = Vector2(33, 21)
