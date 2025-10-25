@@ -201,3 +201,8 @@ text = "MAIN MENU"
 [node name="Intermission" parent="." instance=ExtResource("2_d73ye")]
 visible = false
 position = Vector2(532, -12)
+
+[connection signal="pressed" from="MarginMain/HFlowContainer/MainMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MarginMain2/HFlowContainer/MainMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MarginMain3/HFlowContainer/MainMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MarginMain4/HFlowContainer/MainMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
