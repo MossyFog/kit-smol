@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6mw1wvhx5lct"]
+
+[ext_resource type="Script" uid="uid://bbhyblvndi4kc" path="res://assets/collectable.gd" id="1_jhk65"]
+[ext_resource type="SpriteFrames" uid="uid://c0ww7jgjgqqxb" path="res://assets/tiny_cat_spriteframes.tres" id="2_an7uv"]
+[ext_resource type="Script" uid="uid://djqx5xm6wgjg7" path="res://rotatey_skew.tres.gd" id="3_kupfw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_an7uv"]
+radius = 2.236068
+
+[node name="Collectable" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_jhk65")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = -17.0
+offset_right = 24.0
+offset_bottom = -5.0
+theme_override_font_sizes/font_size = 8
+text = "Whoah, Cool!"
+
+[node name="LabelSpinny" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -0.32117558
+offset_top = 16.723875
+offset_right = 59.67883
+offset_bottom = 28.723875
+rotation = 88.99953
+pivot_offset = Vector2(5.59536, 6)
+theme_override_font_sizes/font_size = 8
+text = "💫 SPINNY!! 💫"
+
+[node name="LabelSpinny2" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -48.81559
+offset_top = 14.605922
+offset_right = 11.18441
+offset_bottom = 26.605923
+rotation = 88.99953
+pivot_offset = Vector2(29.634727, 5.755554)
+theme_override_font_sizes/font_size = 8
+text = "💫 SPINNY!! 💫"
+
+[node name="KittyCollect" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+skew = 88.99953
+sprite_frames = ExtResource("2_an7uv")
+animation = &"jump"
+
+[node name="Area2D" type="Area2D" parent="KittyCollect"]
+scale = Vector2(1, 2.5829782)
+skew = -0.7101722
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KittyCollect/Area2D"]
+position = Vector2(-3, 2)
+shape = SubResource("CircleShape2D_an7uv")
+
+[node name="RotateySkew" type="Node2D" parent="KittyCollect"]
+script = ExtResource("3_kupfw")
+speed_idk = 0.008
+
+[connection signal="body_entered" from="KittyCollect/Area2D" to="." method="_on_area_2d_body_entered"]

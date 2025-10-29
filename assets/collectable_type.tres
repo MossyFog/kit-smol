@@ -1,6 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://s0gg4rm4imdy"]
-
-[ext_resource type="Script" uid="uid://4gu2pk12nc18" path="res://assets/collectable_type.gd" id="1_doxt7"]
-
-[resource]
-script = ExtResource("1_doxt7")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://yyxkfblc7m70"]
+
+[ext_resource type="Script" uid="uid://ukofo1hy878w" path="res://core/utility/tetherizer.gd" id="1_iof7l"]
+
+[node name="Tetherizer" type="Node2D"]
+script = ExtResource("1_iof7l")
+
+[node name="Springjoint" type="DampedSpringJoint2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]

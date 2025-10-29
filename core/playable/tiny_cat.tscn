@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://xa55c4w1wd1w"]
+
+[ext_resource type="Script" uid="uid://dw7pt0ynf8f1m" path="res://core/playable/tiny_cat.gd" id="1_mteru"]
+[ext_resource type="SpriteFrames" uid="uid://c0ww7jgjgqqxb" path="res://core/playable/tiny_cat_spriteframes.tres" id="2_tq5vg"]
+[ext_resource type="Script" uid="uid://bg21wqrnagm8g" path="res://core/abstract/sprite.gd" id="3_cqsv7"]
+[ext_resource type="PackedScene" uid="uid://b4sapj2rrxq2f" path="res://experiments/sworb-n-text/polygon_2d.tscn" id="4_tq5vg"]
+[ext_resource type="PackedScene" uid="uid://yyxkfblc7m70" path="res://experiments/tetherizer.tscn" id="5_yvf3t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6x4n"]
+radius = 2.0
+height = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mteru"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smecq"]
+radius = 2.0
+height = 8.0
+
+[node name="TinyCat" type="Node2D" node_paths=PackedStringArray("myArea")]
+script = ExtResource("1_mteru")
+myArea = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
+sprite_frames = ExtResource("2_tq5vg")
+script = ExtResource("3_cqsv7")
+
+[node name="CoreCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_n6x4n")
+
+[node name="OuterCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_mteru")
+debug_color = Color(0.8156863, 0.68235296, 0.9647059, 0.23921569)
+
+[node name="HeadCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_smecq")
+debug_color = Color(0.9411765, 0.6862745, 0.5137255, 0.12156863)
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="OuterCollision" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_mteru")
+debug_color = Color(0.8156863, 0.68235296, 0.9647059, 0.23921569)
+
+[node name="Polygon2D" parent="." instance=ExtResource("4_tq5vg")]
+position = Vector2(4.655098, 3.6295757)
+
+[node name="Tetherizer" parent="." instance=ExtResource("5_yvf3t")]

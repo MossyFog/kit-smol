@@ -1,0 +1,339 @@
+[gd_scene load_steps=8 format=4 uid="uid://gitspmoyuu1s"]
+
+[ext_resource type="Script" uid="uid://bowscnnt5yyuf" path="res://experiments/if_hidden_nvm.gd" id="1_d661p"]
+[ext_resource type="PackedScene" uid="uid://bbq8lwc6sdsgd" path="res://experiments/safety_grate.tscn" id="1_rbog4"]
+[ext_resource type="Texture2D" uid="uid://rhukjdkpus85" path="res://assets/md0/md0-mossyfog_saftey-grate_p220928.png" id="2_d661p"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gcriy"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_bi5lt"]
+tile_data = PackedInt32Array(0, 0, 0, 131073, 0, 0, 65539, 0, 0, 65541, 0, 0, 7, 0, 0, 131081, 0, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g752"]
+texture = ExtResource("2_d661p")
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/1 = 1
+0:0/2 = 2
+0:0/3 = 3
+
+[sub_resource type="TileSet" id="TileSet_kext1"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_1g752")
+pattern_0 = SubResource("TileMapPattern_bi5lt")
+
+[node name="LevelSetStuffTest01" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_d661p")
+
+[node name="FloorTiles01" type="Node2D" parent="."]
+position = Vector2(33, 21)
+
+[node name="SafetyGrate" parent="FloorTiles01" instance=ExtResource("1_rbog4")]
+position = Vector2(-33, -4)
+
+[node name="SafetyGrate2" parent="FloorTiles01" instance=ExtResource("1_rbog4")]
+position = Vector2(-15, 0)
+
+[node name="SafetyGrate3" parent="FloorTiles01" instance=ExtResource("1_rbog4")]
+position = Vector2(16, 5)
+
+[node name="SafetyGrate4" parent="FloorTiles01" instance=ExtResource("1_rbog4")]
+position = Vector2(32, 5)
+
+[node name="SafetyGrate5" parent="FloorTiles01" instance=ExtResource("1_rbog4")]
+position = Vector2(48, 5)
+
+[node name="FlatFloor1" type="Node2D" parent="FloorTiles01"]
+
+[node name="SafetyGrate6" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-169, 52)
+
+[node name="SafetyGrate7" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-153, 52)
+
+[node name="SafetyGrate8" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-137, 52)
+
+[node name="SafetyGrate9" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-121, 52)
+
+[node name="SafetyGrate10" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-105, 52)
+
+[node name="SafetyGrate11" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-89, 52)
+
+[node name="SafetyGrate12" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-73, 52)
+
+[node name="SafetyGrate13" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-57, 52)
+
+[node name="SafetyGrate14" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-41, 52)
+
+[node name="SafetyGrate15" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-25, 52)
+
+[node name="SafetyGrate16" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-9, 52)
+
+[node name="SafetyGrate17" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(7, 52)
+
+[node name="SafetyGrate18" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(23, 52)
+
+[node name="SafetyGrate19" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(39, 52)
+
+[node name="SafetyGrate20" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(55, 52)
+
+[node name="SafetyGrate21" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(71, 52)
+
+[node name="SafetyGrate22" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(87, 52)
+
+[node name="SafetyGrate23" parent="FloorTiles01/FlatFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(103, 52)
+
+[node name="FlatFloor2" type="Node2D" parent="FloorTiles01"]
+position = Vector2(-144, -162)
+
+[node name="SafetyGrate6" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-169, 52)
+
+[node name="SafetyGrate7" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-153, 52)
+
+[node name="SafetyGrate8" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-137, 52)
+
+[node name="SafetyGrate9" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-121, 52)
+
+[node name="SafetyGrate10" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-105, 52)
+
+[node name="SafetyGrate11" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-89, 52)
+
+[node name="SafetyGrate12" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-73, 52)
+
+[node name="SafetyGrate13" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-57, 52)
+
+[node name="SafetyGrate14" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-41, 52)
+
+[node name="SafetyGrate15" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-25, 52)
+
+[node name="SafetyGrate16" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-9, 52)
+
+[node name="SafetyGrate17" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(7, 52)
+
+[node name="SafetyGrate18" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(23, 52)
+
+[node name="SafetyGrate19" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(39, 52)
+
+[node name="SafetyGrate20" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(55, 52)
+
+[node name="SafetyGrate21" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(71, 52)
+
+[node name="SafetyGrate22" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(87, 52)
+
+[node name="SafetyGrate23" parent="FloorTiles01/FlatFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(103, 52)
+
+[node name="FlatFloor3" type="Node2D" parent="FloorTiles01"]
+position = Vector2(144, -162)
+
+[node name="SafetyGrate6" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-169, 52)
+
+[node name="SafetyGrate7" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-153, 52)
+
+[node name="SafetyGrate8" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-137, 52)
+
+[node name="SafetyGrate9" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-121, 52)
+
+[node name="SafetyGrate10" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-105, 52)
+
+[node name="SafetyGrate11" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-89, 52)
+
+[node name="SafetyGrate12" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-73, 52)
+
+[node name="SafetyGrate13" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-57, 52)
+
+[node name="SafetyGrate14" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-41, 52)
+
+[node name="SafetyGrate15" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-25, 52)
+
+[node name="SafetyGrate16" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-9, 52)
+
+[node name="SafetyGrate17" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(7, 52)
+
+[node name="SafetyGrate18" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(23, 52)
+
+[node name="SafetyGrate19" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(39, 52)
+
+[node name="SafetyGrate20" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(55, 52)
+
+[node name="SafetyGrate21" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(71, 52)
+
+[node name="SafetyGrate22" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(87, 52)
+
+[node name="SafetyGrate23" parent="FloorTiles01/FlatFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(103, 52)
+
+[node name="TiltFloor1" type="Node2D" parent="FloorTiles01"]
+position = Vector2(150, 17.000004)
+rotation = -0.5996431
+
+[node name="SafetyGrate24" parent="FloorTiles01/TiltFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-39.533447, 8.426384)
+
+[node name="SafetyGrate25" parent="FloorTiles01/TiltFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-23.533447, 8.426384)
+
+[node name="SafetyGrate26" parent="FloorTiles01/TiltFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(-7.5334473, 8.426384)
+
+[node name="SafetyGrate27" parent="FloorTiles01/TiltFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(8.466553, 8.426384)
+
+[node name="SafetyGrate28" parent="FloorTiles01/TiltFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(24.466553, 8.426384)
+
+[node name="SafetyGrate29" parent="FloorTiles01/TiltFloor1" instance=ExtResource("1_rbog4")]
+position = Vector2(40.466553, 8.426384)
+
+[node name="TiltFloor2" type="Node2D" parent="FloorTiles01"]
+position = Vector2(200, -60.00001)
+rotation = -1.0471976
+
+[node name="SafetyGrate24" parent="FloorTiles01/TiltFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-39.533447, 8.426384)
+
+[node name="SafetyGrate25" parent="FloorTiles01/TiltFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-23.533447, 8.426384)
+
+[node name="SafetyGrate26" parent="FloorTiles01/TiltFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(-7.5334473, 8.426384)
+
+[node name="SafetyGrate27" parent="FloorTiles01/TiltFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(8.466553, 8.426384)
+
+[node name="SafetyGrate28" parent="FloorTiles01/TiltFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(24.466553, 8.426384)
+
+[node name="SafetyGrate29" parent="FloorTiles01/TiltFloor2" instance=ExtResource("1_rbog4")]
+position = Vector2(40.466553, 8.426384)
+
+[node name="TiltFloor3" type="Node2D" parent="FloorTiles01"]
+position = Vector2(-219, 19.000004)
+rotation = 0.5235988
+
+[node name="SafetyGrate24" parent="FloorTiles01/TiltFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-39.533447, 8.426384)
+
+[node name="SafetyGrate25" parent="FloorTiles01/TiltFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-23.533447, 8.426384)
+
+[node name="SafetyGrate26" parent="FloorTiles01/TiltFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(-7.5334473, 8.426384)
+
+[node name="SafetyGrate27" parent="FloorTiles01/TiltFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(8.466553, 8.426384)
+
+[node name="SafetyGrate28" parent="FloorTiles01/TiltFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(24.466553, 8.426384)
+
+[node name="SafetyGrate29" parent="FloorTiles01/TiltFloor3" instance=ExtResource("1_rbog4")]
+position = Vector2(40.466553, 8.426384)
+
+[node name="TiltFloor4" type="Node2D" parent="FloorTiles01"]
+position = Vector2(-257.99997, -55.999996)
+rotation = 1.3089969
+
+[node name="SafetyGrate24" parent="FloorTiles01/TiltFloor4" instance=ExtResource("1_rbog4")]
+position = Vector2(-39.533447, 8.426384)
+
+[node name="SafetyGrate25" parent="FloorTiles01/TiltFloor4" instance=ExtResource("1_rbog4")]
+position = Vector2(-23.533447, 8.426384)
+
+[node name="SafetyGrate26" parent="FloorTiles01/TiltFloor4" instance=ExtResource("1_rbog4")]
+position = Vector2(-7.5334473, 8.426384)
+
+[node name="SafetyGrate27" parent="FloorTiles01/TiltFloor4" instance=ExtResource("1_rbog4")]
+position = Vector2(8.466553, 8.426384)
+
+[node name="SafetyGrate28" parent="FloorTiles01/TiltFloor4" instance=ExtResource("1_rbog4")]
+position = Vector2(24.466553, 8.426384)
+
+[node name="SafetyGrate29" parent="FloorTiles01/TiltFloor4" instance=ExtResource("1_rbog4")]
+position = Vector2(40.466553, 8.426384)
+
+[node name="Area2DBoundary" type="Area2D" parent="."]
+position = Vector2(0, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DBoundary"]
+shape = SubResource("WorldBoundaryShape2D_gcriy")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.2, 1.2)
+repeat_size = Vector2(140.22, 103.52)
+repeat_times = 14
+limit_begin = Vector2(-10000, -10000)
+limit_end = Vector2(10000, 10000)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D"]
+modulate = Color(1, 1, 1, 0.10980392)
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAGAAIAAAAAAAAAAAD6/wIAAAAAAAAAAAD7//7/AAAAAAAAAAD8/wAAAAAAAAAAAAD+////AAAAAAAAAAACAP7/AAAAAAAAAAAEAAAAAAAAAAAAAAAAAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_kext1")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.2, 1.2)
+repeat_size = Vector2(140.22, 103.52)
+repeat_times = 14
+limit_begin = Vector2(-10000, -10000)
+limit_end = Vector2(10000, 10000)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="Parallax2D2"]
+modulate = Color(1, 1, 1, 0.02745098)
+texture_filter = 1
+position = Vector2(-16.415, 0)
+skew = -0.43633232
+tile_map_data = PackedByteArray("AAAGAAIAAAAAAAAAAAD6/wIAAAAAAAAAAAD7//7/AAAAAAAAAAD8/wAAAAAAAAAAAAD+////AAAAAAAAAAACAP7/AAAAAAAAAAAEAAAAAAAAAAAAAAAAAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_kext1")

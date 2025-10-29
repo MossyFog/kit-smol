@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://nkn15l7jeur1"]
-
-[ext_resource type="PackedScene" uid="uid://xa55c4w1wd1w" path="res://scenes/playables/tiny_cat.tscn" id="1_b1r27"]
-
-[node name="Playable" type="Node2D"]
-
-[node name="TinyCat" parent="." instance=ExtResource("1_b1r27")]

@@ -29,9 +29,9 @@ Conversions="*res://global_scripts/conversions.gd"
 folder_colors={
 "res://addons/": "gray",
 "res://assets/": "blue",
+"res://core/": "green",
+"res://experiments/": "red",
 "res://global_scripts/": "gray",
-"res://scenes/": "green",
-"res://scenes/testing/": "red",
 "res://script_templates/": "gray"
 }
 
