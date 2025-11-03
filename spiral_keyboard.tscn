@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://bmt0tx8l72rwt"]
+
+[node name="SpiralKeyboard" type="CanvasLayer"]
+
+[node name="SpiralKeyboard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 10, 50, -10, 50)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+rotation = -0.39496037
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 10, 50, -10, 50)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D2"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D2"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+rotation = -1.064685
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D3"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D3"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+rotation = -1.5969763
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D4"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D4"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+rotation = -2.1293018
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D5"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D5"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D6" type="Polygon2D" parent="."]
+rotation = -2.661627
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D6"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D6"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D7" type="Polygon2D" parent="."]
+rotation = -3.1939526
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D7"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D7"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D8" type="Polygon2D" parent="."]
+rotation = -3.726278
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D8"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D8"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+rotation = -4.2586036
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D9"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D9"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D10" type="Polygon2D" parent="."]
+rotation = -4.790929
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D10"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D10"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D11" type="Polygon2D" parent="."]
+rotation = -5.323254
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D11"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D11"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Polygon2D12" type="Polygon2D" parent="."]
+rotation = -5.854781
+color = Color(0.35584757, 0.35764813, 0.4459911, 1)
+polygon = PackedVector2Array(0, 0, 15, 55, -15, 55)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D12"]
+points = PackedVector2Array(0, 0, -15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)
+
+[node name="Line2D2" type="Line2D" parent="Polygon2D12"]
+points = PackedVector2Array(0, 0, 15, 55)
+width = 0.2
+default_color = Color(0.7474669, 0.4750508, 0.49037313, 1)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b38v755ex1k6s"]
+
+[ext_resource type="Script" uid="uid://b3lplrb63gffg" path="res://experiments/risky_git.gd" id="1_fwq0s"]
+
+[node name="RiskyGit" type="Node"]
+script = ExtResource("1_fwq0s")
+commitMessage = "testing riskygit"
