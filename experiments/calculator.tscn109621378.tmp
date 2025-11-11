@@ -1,0 +1,197 @@
+[gd_scene load_steps=4 format=3 uid="uid://n2kkml11iww7"]
+
+[ext_resource type="Script" uid="uid://bfudxebfrplmm" path="res://experiments/calc_button.gd" id="1_538ls"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvcfd"]
+bg_color = Color(0.40443814, 0.59608823, 0.93189055, 1)
+skew = Vector2(0.17, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqxml"]
+bg_color = Color(0.40443814, 0.59608823, 0.41551143, 1)
+skew = Vector2(0.17, 0)
+
+[node name="Calculator" type="CanvasLayer"]
+
+[node name="Window" type="Window" parent="."]
+oversampling_override = 1.0
+title = "KIT SMOL Calculator"
+position = Vector2i(0, 36)
+size = Vector2i(250, 290)
+content_scale_mode = 1
+content_scale_aspect = 1
+
+[node name="Control" type="Control" parent="Window"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Result" type="RichTextLabel" parent="Window/Control/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+tooltip_text = "Result"
+text = "1 + 1 = MEOWZA"
+
+[node name="CenterContainer" type="CenterContainer" parent="Window/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Seven" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "7"
+script = ExtResource("1_538ls")
+
+[node name="Eight" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "8"
+
+[node name="Nine" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "9"
+
+[node name="Four" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "4"
+
+[node name="Five" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "5"
+
+[node name="Six" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "6"
+
+[node name="One" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "1"
+
+[node name="Two" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "2"
+
+[node name="Three" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "3"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Zero" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "0"
+
+[node name="Equals" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
+text = "="
+
+[node name="GridContainer2" type="GridContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Divide" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqxml")
+text = "/"
+
+[node name="Multiply" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqxml")
+text = "*"
+
+[node name="Plus" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqxml")
+text = "+"
+
+[node name="Minus" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqxml")
+text = "-"

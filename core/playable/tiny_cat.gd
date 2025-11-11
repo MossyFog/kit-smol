@@ -15,15 +15,11 @@ signal spend_fuel(cost : float) ## Spend fuel.
 var rigid : RigidBody2D ## Replaces myArea.
 var respawnTimer : Timer ## Timer until respawn.
 var timeToRespawnAfterBoundary : float = 2.0 ## Time to respawn after crossing
-## world boundary.
 var fuel_cost : float = 0.05 ## Cost of fuel.
-#var _tether_is_bound : bool ## Determines if tether is bound.
 
-@onready var tetherizer: Node2D = $Tetherizer ## Tetherizer
+@onready var tetherizer : Node2D = $Tetherizer ## Tetherizer
 @onready var startPos : Vector2 ## Initial start position.
 @onready var spawnPosition : Vector2 = self.position ## Where to spawn.
-#@onready var lockspot := StaticBody2D.new() ## Locked body to connect joint to.
-#@onready var springjoint := DampedSpringJoint2D.new() ## Spring joint.
 
 # Built-in func 
 ## 🌟
@@ -36,7 +32,7 @@ func _ready() -> void:
 	# Tether/spring/joint
 	tetherizer.tether_manifest()
 	startPos = rigid.position
-	
+
 
 ## ⚙️
 func _process(_delta: float) -> void:
@@ -58,11 +54,11 @@ func _process(_delta: float) -> void:
 	if (pressing_jump):  #⬆
 		scooch(boop_up)
 	if Input.is_action_just_pressed("down"):
-		tetherizer.tether_bind(tetherizer.springjoint, tetherizer.lockbody, rigid)
+		tetherizer.tether_bind()
 	if (pressing_down):  #⬇️
 		screech()
 	if(released_up):     #🛑⬆️
-		tetherizer.tether_cut(tetherizer.springjoint)
+		tetherizer.tether_cut()
 	if (pressing_up):    #⬆️⬆
 		scooch(boop_up * 1.50)
 	if (scroll_up):
@@ -74,12 +70,19 @@ func _process(_delta: float) -> void:
 	
 	queue_redraw()
 
+
 func _draw() -> void:
-	draw_line(tetherizer.lockbody.position, rigid.position, Color.RED, 1.2)
-	
-	draw_circle(rigid.position,       5.0, Color.ORANGE_RED, false, 2.0, true)
-	draw_circle(tetherizer.springjoint.position, 5.0, Color.BLUE, false, 2.0, true)
-	draw_circle(tetherizer.lockbody.position,    5.0, Color.GREEN, false, 2.0, true)
+	draw_line(
+		tetherizer.lockbody.position, rigid.position, 
+		Color.RED, 1.2, false)
+	draw_circle(
+		rigid.position, 5.0, Color.ORANGE_RED, false, 2.0, true)
+	draw_circle(
+		tetherizer.springjoint.position, 5.0, 
+		Color.BLUE, false, 2.0, true)
+	draw_circle(
+		tetherizer.lockbody.position, 5.0, 
+		Color.GREEN, false, 2.0, true)
 	
 
 
@@ -90,18 +93,18 @@ func scooch(dir : Vector2) -> void:
 	rigid.apply_impulse(dir)
 	emit_signal("spend_fuel", fuel_cost)
 
+
 ## 🛑
 func screech() -> void:
 	# Brakes / slow / stoppies
 	pass
 
 
-
-
 ## ⚡
 func respawn() -> void:
 	print("Respawning...")
 	self.position = spawnPosition
+	$Area2D.position = spawnPosition
 
 
 # Private func
@@ -115,12 +118,14 @@ func _start_respawn_timer() -> void:
 
 # Signals
 ## ⛔
-func _on_area_2d_boundary_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
+func _on_area_2d_boundary_body_shape_entered(
+	_body_rid: RID, _body: Node2D, _body_shape_index: int,
+	_local_shape_index: int) -> void:
 	#if (body == $"Area2D2"):
 		#print(body, " has collided.")
 		#_start_respawn_timer()
 	pass
-	
+
 
 ##⌛
 func _on_respawn_timer_timeout() -> void:

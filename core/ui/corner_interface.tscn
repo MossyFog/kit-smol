@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://j6gl0ifrarp1"]
+
+[ext_resource type="PackedScene" uid="uid://d3uwhqietc2vl" path="res://core/ui/fuel_hud.tscn" id="1_rqeri"]
+[ext_resource type="PackedScene" uid="uid://c7bw47m7mh3qb" path="res://core/ui/dev_tools_button.tscn" id="2_1b16e"]
+[ext_resource type="PackedScene" uid="uid://dcjb64lxr8ymd" path="res://core/utility/main_menu_button.tscn" id="3_lrb5k"]
+
+[node name="CornerInterface" type="Control"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="FuelHUD" parent="Margin/HFlowContainer" instance=ExtResource("1_rqeri")]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 2
+
+[node name="DevTools" parent="Margin/HFlowContainer" instance=ExtResource("2_1b16e")]
+layout_mode = 2
+
+[node name="MainMenu" parent="Margin/HFlowContainer" instance=ExtResource("3_lrb5k")]
+layout_mode = 2

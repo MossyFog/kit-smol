@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4w1g61eov4xe"]
+
+[ext_resource type="SpriteFrames" uid="uid://c0ww7jgjgqqxb" path="res://core/playable/tiny_cat_spriteframes.tres" id="1_71r4k"]
+[ext_resource type="Script" uid="uid://djqx5xm6wgjg7" path="res://experiments/intermission/rotatey_skew.tres.gd" id="2_8ap0y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_an7uv"]
+radius = 2.236068
+
+[node name="KittyCollect" type="AnimatedSprite2D"]
+texture_filter = 1
+skew = 88.99953
+sprite_frames = ExtResource("1_71r4k")
+animation = &"jump"
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 2.5829782)
+skew = -0.7101722
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 2)
+shape = SubResource("CircleShape2D_an7uv")
+
+[node name="RotateySkew" type="Node2D" parent="."]
+script = ExtResource("2_8ap0y")
+speed_idk = 0.008

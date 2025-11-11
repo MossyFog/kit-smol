@@ -5,4 +5,5 @@ enum TYPES {
 	INVISIBLE_COLLECT,
 	KEY,
 	COIN,
+	FUEL,
 }

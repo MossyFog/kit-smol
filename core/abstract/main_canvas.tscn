@@ -1,208 +1,65 @@
 [gd_scene load_steps=4 format=3 uid="uid://rhukoj80kgmq"]
 
-[ext_resource type="Script" uid="uid://b7e1ql3sxs6gs" path="res://experiments/sidequest-vector/main_control.gd" id="1_3jnx6"]
-[ext_resource type="PackedScene" uid="uid://d3uwhqietc2vl" path="res://core/ui/fuel_hud.tscn" id="2_422ur"]
-[ext_resource type="PackedScene" uid="uid://dt0mpk8o5m6an" path="res://experiments/intermission/intermission.tscn" id="2_d73ye"]
+[ext_resource type="Script" uid="uid://b7e1ql3sxs6gs" path="res://core/abstract/main_canvas.gd" id="1_3jnx6"]
+[ext_resource type="PackedScene" uid="uid://j6gl0ifrarp1" path="res://core/ui/corner_interface.tscn" id="2_ep1fn"]
+[ext_resource type="PackedScene" uid="uid://uk8ugop8wmel" path="res://core/ui/main_menu.tscn" id="5_3tp8m"]
 
-[node name="MainControl" type="CanvasLayer"]
+[node name="MainControl" type="CanvasLayer" node_paths=PackedStringArray("main_menu")]
 script = ExtResource("1_3jnx6")
+main_menu = NodePath("MainMenuWindow")
 
-[node name="MarginMain" type="MarginContainer" parent="."]
+[node name="CornerInterfaces" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -752.0
-offset_bottom = -448.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="HFlowContainer" type="HBoxContainer" parent="MarginMain"]
-layout_mode = 2
-
-[node name="FuelHUD" parent="MarginMain/HFlowContainer" instance=ExtResource("2_422ur")]
-custom_minimum_size = Vector2(40, 120)
-layout_mode = 2
-
-[node name="DevTools" type="Control" parent="MarginMain/HFlowContainer"]
-modulate = Color(1, 0.81178766, 0.86981654, 0.43500003)
-custom_minimum_size = Vector2(52, 52)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="DevToolsButton" type="Button" parent="MarginMain/HFlowContainer/DevTools"]
-layout_mode = 1
-offset_right = 52.0
-offset_bottom = 53.0
-theme_override_font_sizes/font_size = 32
-text = "🛠️"
-
-[node name="MainMenu" type="Control" parent="MarginMain/HFlowContainer"]
-modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="MainMenuButton" type="Button" parent="MarginMain/HFlowContainer/MainMenu"]
+[node name="CornerTL" parent="CornerInterfaces" instance=ExtResource("2_ep1fn")]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "MAIN MENU"
+offset_right = 300.0
+offset_bottom = 400.0
 
-[node name="MarginMain2" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1152.0
-offset_top = 648.0
-offset_right = 400.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -3.1415927
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="HFlowContainer" type="HBoxContainer" parent="MarginMain2"]
-layout_mode = 2
-
-[node name="FuelHUD" parent="MarginMain2/HFlowContainer" instance=ExtResource("2_422ur")]
-custom_minimum_size = Vector2(40, 120)
-layout_mode = 2
-
-[node name="DevTools" type="Control" parent="MarginMain2/HFlowContainer"]
-modulate = Color(1, 0.81178766, 0.86981654, 0.43500003)
-custom_minimum_size = Vector2(52, 52)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="DevToolsButton" type="Button" parent="MarginMain2/HFlowContainer/DevTools"]
+[node name="CornerTR" parent="CornerInterfaces" instance=ExtResource("2_ep1fn")]
 layout_mode = 1
-offset_right = 52.0
-offset_bottom = 53.0
-theme_override_font_sizes/font_size = 32
-text = "🛠️"
-
-[node name="MainMenu" type="Control" parent="MarginMain2/HFlowContainer"]
-modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="MainMenuButton" type="Button" parent="MarginMain2/HFlowContainer/MainMenu"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "MAIN MENU"
-
-[node name="MarginMain3" type="MarginContainer" parent="."]
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1152.0
-offset_right = 400.0
-offset_bottom = -448.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -300.0
+offset_bottom = 400.0
+grow_horizontal = 0
 rotation = 1.5707964
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+pivot_offset = Vector2(150, 150)
 
-[node name="HFlowContainer" type="HBoxContainer" parent="MarginMain3"]
-layout_mode = 2
-
-[node name="FuelHUD" parent="MarginMain3/HFlowContainer" instance=ExtResource("2_422ur")]
-custom_minimum_size = Vector2(40, 120)
-layout_mode = 2
-
-[node name="DevTools" type="Control" parent="MarginMain3/HFlowContainer"]
-modulate = Color(1, 0.81178766, 0.86981654, 0.43500003)
-custom_minimum_size = Vector2(52, 52)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="DevToolsButton" type="Button" parent="MarginMain3/HFlowContainer/DevTools"]
+[node name="CornerBR" parent="CornerInterfaces" instance=ExtResource("2_ep1fn")]
 layout_mode = 1
-offset_right = 52.0
-offset_bottom = 53.0
-theme_override_font_sizes/font_size = 32
-text = "🛠️"
-
-[node name="MainMenu" type="Control" parent="MarginMain3/HFlowContainer"]
-modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="MainMenuButton" type="Button" parent="MarginMain3/HFlowContainer/MainMenu"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "MAIN MENU"
-
-[node name="MarginMain4" type="MarginContainer" parent="."]
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 648.0
-offset_right = -752.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -1.5707964
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+offset_left = -300.0
+offset_top = -400.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 3.1415927
+pivot_offset = Vector2(150, 200)
 
-[node name="HFlowContainer" type="HBoxContainer" parent="MarginMain4"]
-layout_mode = 2
-
-[node name="FuelHUD" parent="MarginMain4/HFlowContainer" instance=ExtResource("2_422ur")]
-custom_minimum_size = Vector2(40, 120)
-layout_mode = 2
-
-[node name="DevTools" type="Control" parent="MarginMain4/HFlowContainer"]
-modulate = Color(1, 0.81178766, 0.86981654, 0.43500003)
-custom_minimum_size = Vector2(52, 52)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="DevToolsButton" type="Button" parent="MarginMain4/HFlowContainer/DevTools"]
+[node name="CornerBL" parent="CornerInterfaces" instance=ExtResource("2_ep1fn")]
 layout_mode = 1
-offset_right = 52.0
-offset_bottom = 53.0
-theme_override_font_sizes/font_size = 32
-text = "🛠️"
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -400.0
+offset_right = 300.0
+grow_vertical = 0
+rotation = -1.5707964
+pivot_offset = Vector2(200, 200)
 
-[node name="MainMenu" type="Control" parent="MarginMain4/HFlowContainer"]
-modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="MainMenuButton" type="Button" parent="MarginMain4/HFlowContainer/MainMenu"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "MAIN MENU"
-
-[node name="Intermission" parent="." instance=ExtResource("2_d73ye")]
+[node name="MainMenuWindow" parent="." instance=ExtResource("5_3tp8m")]
 visible = false
-position = Vector2(532, -12)
-
-[connection signal="pressed" from="MarginMain/HFlowContainer/MainMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="MarginMain2/HFlowContainer/MainMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="MarginMain3/HFlowContainer/MainMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="MarginMain4/HFlowContainer/MainMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+offset_top = -3.0
+offset_bottom = -3.0

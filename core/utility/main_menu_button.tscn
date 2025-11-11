@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcjb64lxr8ymd"]
+
+[ext_resource type="PackedScene" uid="uid://dnmf4qxnb8h4e" path="res://util/match_minimum_size.tscn" id="1_yc1ky"]
+
+[node name="MainMenu" type="Control"]
+modulate = Color(0.47058824, 0.8117647, 0.14901961, 0.43529412)
+custom_minimum_size = Vector2(103.205, 29.45)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "MAIN MENU"
+
+[node name="MatchMinimumSize" parent="." node_paths=PackedStringArray("to_match") instance=ExtResource("1_yc1ky")]
+to_match = NodePath("../MainMenuButton")

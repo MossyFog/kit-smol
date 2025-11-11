@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnmf4qxnb8h4e"]
+
+[ext_resource type="Script" uid="uid://wpgfgskweesh" path="res://util/match_minimum_size.gd" id="1_lo3b1"]
+
+[node name="MatchMinimumSize" type="Node"]
+script = ExtResource("1_lo3b1")

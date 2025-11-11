@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,72 +33,72 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+[node name="Panel" type="PanelContainer" parent="Center"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+[node name="MenuVBox" type="VBoxContainer" parent="Center/Panel/Margin"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TitleBar" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Title" type="Label" parent="Center/Panel/Margin/MenuVBox/TitleBar"]
 layout_mode = 2
 text = "Main Menu"
 
-[node name="Container" type="Container" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Padding" type="Container" parent="Center/Panel/Margin/MenuVBox/TitleBar"]
 custom_minimum_size = Vector2(100, 12)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ButtonClose" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Close" type="Button" parent="Center/Panel/Margin/MenuVBox/TitleBar"]
 layout_mode = 2
 text = "❌"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxMain1" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Panel" type="PanelContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain1"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer"]
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/VBoxContainer"]
+[node name="Gradient" type="TextureRect" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("CurveTexture_bqqt6")
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/VBoxContainer"]
+[node name="HSlider" type="HSlider" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox"]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxMain2" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer2" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Panel" type="PanelContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/PanelContainer2"]
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/PanelContainer2/VBoxContainer2"]
+[node name="Gradient" type="TextureRect" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("CurveTexture_8ln24")
 
-[node name="HSlider2" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/PanelContainer2/VBoxContainer2"]
+[node name="HSlider" type="HSlider" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox"]
 layout_mode = 2
 
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonClose" to="." method="_on_button_close_pressed"]
+[connection signal="pressed" from="Center/Panel/Margin/MenuVBox/TitleBar/Close" to="." method="_on_button_close_pressed"]

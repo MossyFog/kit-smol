@@ -3,6 +3,7 @@
 extends CanvasLayer
 
 @export var main_menu : Control
+@export_custom(PROPERTY_HINT_DIR, "Node2D") var test : Node2D
 @onready var viewport_width = ProjectSettings.get_setting("display/window/size/viewport_width")
 @onready var viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")
 

@@ -6,5 +6,5 @@ func _ready() -> void:
 		for i in get_children():
 			i.queue_free()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

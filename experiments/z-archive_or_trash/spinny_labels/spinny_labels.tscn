@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cythnw5wj7hq7"]
+
+[node name="SpinnyLabels" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -27.0
+offset_top = -17.0
+offset_right = 24.0
+offset_bottom = -5.0
+theme_override_font_sizes/font_size = 8
+text = "Whoah, Cool!"
+
+[node name="LabelSpinny" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = -0.32117558
+offset_top = 16.723875
+offset_right = 59.67883
+offset_bottom = 28.723875
+rotation = 88.99953
+pivot_offset = Vector2(5.59536, 6)
+theme_override_font_sizes/font_size = 8
+text = "💫 SPINNY!! 💫"
+
+[node name="LabelSpinny2" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = -48.81559
+offset_top = 14.605922
+offset_right = 11.18441
+offset_bottom = 26.605923
+rotation = 88.99953
+pivot_offset = Vector2(29.634727, 5.755554)
+theme_override_font_sizes/font_size = 8
+text = "💫 SPINNY!! 💫"

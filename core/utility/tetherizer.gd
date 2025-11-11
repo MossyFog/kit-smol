@@ -28,7 +28,7 @@ func tether_manifest() -> void:
 func tether_bind() -> void:
 	align()
 	springjoint.node_a = get_path_to(lockbody)
-	springjoint.node_b = get_path_to(self)
+	springjoint.node_b = get_path_to(tether_target)
 
 ## ⛓️‍💥 This should disable/deactivate the tether, basically
 func tether_cut() -> void:
@@ -40,6 +40,6 @@ func match_pos(target: Node2D, to_match: Node2D) -> void:
 
 func align() -> void:
 	## Match Tetherizer's position to the body that stays still
-	match_pos(self, lockbody)
+	match_pos(tether_target, lockbody)
 	## Match the Springjoint to the Tetherizer's position
-	match_pos(springjoint, self)
+	match_pos(springjoint, tether_target)

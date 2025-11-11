@@ -25,7 +25,7 @@ func commit_to_git() -> void:
 	var output = []
 	var command : String = "git commit -m"
 	if (_validate_commit_message(commitMessage)):
-		OS.execute("CMD.exe", ["/C", command], output, true, true)
+		OS.execute("CMD.exe", ["/C", command + "\"" + commitMessage + "\""], output, true, true)
 		print(output)
 	else:
 		printerr("commitMessage failed validation")
