@@ -1,5 +1,5 @@
 extends Control
-## Main Menu
+## Fuel HUD
 
 
 func _ready() -> void:
@@ -8,7 +8,3 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	pass
-
-
-func _on_button_close_pressed() -> void:
-	hide()

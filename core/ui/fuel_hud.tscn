@@ -1,24 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3uwhqietc2vl"]
+[gd_scene load_steps=3 format=3 uid="uid://d3uwhqietc2vl"]
+
+[ext_resource type="Script" uid="uid://dsns6us1bvp2p" path="res://core/ui/fuel_hud.gd" id="1_q4o41"]
 
 [sub_resource type="GDScript" id="GDScript_irrls"]
 script/source = "extends VSlider
+## FuelVSlider
 
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	update_label_gauge()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
+func update_label_gauge() -> void:
+	$LabelGauge.text = str(value) + \"/\" + str(max_value)
 
 func _on_tiny_cat_spend_fuel(cost : float) -> float:
-	#print(\"value was.. \", value, \" cost is.. \", cost)
 	value = value - cost
-	#print(\"value now is.. \", value)
+	update_label_gauge()
 	return value
 "
 
@@ -30,6 +30,7 @@ offset_right = 42.335
 offset_bottom = 126.515
 size_flags_horizontal = 0
 size_flags_vertical = 0
+script = ExtResource("1_q4o41")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(0, 120)
@@ -46,7 +47,7 @@ layout_mode = 2
 text = "FUEL"
 autowrap_mode = 1
 
-[node name="VSlider" type="VSlider" parent="PanelContainer/HBoxContainer"]
+[node name="FuelVSlider" type="VSlider" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 step = 0.01
 value = 90.0
@@ -56,3 +57,14 @@ tick_count = 80
 ticks_on_borders = true
 ticks_position = 3
 script = SubResource("GDScript_irrls")
+
+[node name="LabelGauge" type="Label" parent="PanelContainer/HBoxContainer/FuelVSlider"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 0
+offset_left = -16.0
+offset_top = 97.0
+offset_right = 24.0
+offset_bottom = 120.0
+size_flags_vertical = 8
+text = "FUEL"
+autowrap_mode = 1

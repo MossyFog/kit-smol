@@ -1,0 +1,274 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2053dc6nqylb"]
+
+[ext_resource type="Script" uid="uid://f5o0og4myjnv" path="res://experiments/kitteh_wheel/kitteh_wheel.gd" id="1_1or7u"]
+[ext_resource type="Texture2D" uid="uid://bd5144ubv0lih" path="res://assets/cc0/tinycat_kirisoft/tinycat11x11.png" id="2_plrf4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmcma"]
+radius = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3j2do"]
+radius = 1.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ygdeu"]
+radius = 1.0
+height = 16.0
+
+[node name="KittehWheel" type="Node2D" node_paths=PackedStringArray("points")]
+texture_filter = 1
+script = ExtResource("1_1or7u")
+points = [NodePath("RigidHub"), NodePath("RigidBotLeft"), NodePath("RigidBot")]
+metadata/_edit_vertical_guides_ = [-3.0, 3.0, 0.0, -11.0, 11.0, -4.0, 4.0, 10.0, -10.0, 1.0, -1.0, 8.0, 6.0, -8.0, -6.0, -7.0, 7.0, -12.0, 12.0]
+metadata/_edit_horizontal_guides_ = [-3.0, 3.0, 0.0, -12.0, 12.0, -8.0, 8.0, -4.0, 4.0, -7.0, -11.0, 11.0, 7.0, 1.0, -1.0, -5.0, 5.0, 9.0, -13.0, 13.0, -9.0]
+
+[node name="RigidHub" type="RigidBody2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="RigidHub"]
+texture = ExtResource("2_plrf4")
+
+[node name="Collision" type="CollisionShape2D" parent="RigidHub"]
+top_level = true
+shape = SubResource("CircleShape2D_fmcma")
+
+[node name="RigidBotLeft" type="RigidBody2D" parent="."]
+position = Vector2(-7, 4)
+
+[node name="Sprite" type="Sprite2D" parent="RigidBotLeft"]
+position = Vector2(9.536743e-07, 7.6293945e-06)
+texture = ExtResource("2_plrf4")
+
+[node name="Collision" type="CollisionShape2D" parent="RigidBotLeft"]
+shape = SubResource("CircleShape2D_fmcma")
+
+[node name="RigidBot" type="RigidBody2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="Sprite" type="Sprite2D" parent="RigidBot"]
+position = Vector2(9.536743e-07, 7.6293945e-06)
+texture = ExtResource("2_plrf4")
+
+[node name="Collision" type="CollisionShape2D" parent="RigidBot"]
+shape = SubResource("CircleShape2D_fmcma")
+
+[node name="RigidBotRight" type="RigidBody2D" parent="."]
+position = Vector2(7, 4)
+
+[node name="Sprite" type="Sprite2D" parent="RigidBotRight"]
+position = Vector2(9.536743e-07, 7.6293945e-06)
+texture = ExtResource("2_plrf4")
+
+[node name="Collision" type="CollisionShape2D" parent="RigidBotRight"]
+shape = SubResource("CircleShape2D_fmcma")
+
+[node name="RigidTopRight" type="RigidBody2D" parent="."]
+position = Vector2(7, -4)
+
+[node name="Sprite" type="Sprite2D" parent="RigidTopRight"]
+position = Vector2(9.536743e-07, 7.6293945e-06)
+texture = ExtResource("2_plrf4")
+
+[node name="Collision" type="CollisionShape2D" parent="RigidTopRight"]
+shape = SubResource("CircleShape2D_fmcma")
+
+[node name="RigidTop" type="RigidBody2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="Sprite" type="Sprite2D" parent="RigidTop"]
+position = Vector2(9.536743e-07, 7.6293945e-06)
+texture = ExtResource("2_plrf4")
+
+[node name="Collision" type="CollisionShape2D" parent="RigidTop"]
+shape = SubResource("CircleShape2D_fmcma")
+
+[node name="RigidTopLeft" type="RigidBody2D" parent="."]
+position = Vector2(-7, -4)
+
+[node name="Sprite" type="Sprite2D" parent="RigidTopLeft"]
+position = Vector2(9.536743e-07, 7.6293945e-06)
+texture = ExtResource("2_plrf4")
+
+[node name="Collision" type="CollisionShape2D" parent="RigidTopLeft"]
+shape = SubResource("CircleShape2D_fmcma")
+
+[node name="SpokeVert" type="RigidBody2D" parent="."]
+rotation = 3.1415927
+
+[node name="HubToCenter" type="PinJoint2D" parent="SpokeVert"]
+node_a = NodePath("../../RigidHub")
+node_b = NodePath("..")
+bias = 0.9
+angular_limit_lower = -0.0017453292
+angular_limit_upper = 0.0017453292
+motor_enabled = true
+motor_target_velocity = 0.75852007
+
+[node name="Bottom" type="PinJoint2D" parent="SpokeVert"]
+position = Vector2(-1.1364959e-06, -8)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBot")
+bias = 0.9
+softness = 16.0
+
+[node name="Top" type="PinJoint2D" parent="SpokeVert"]
+position = Vector2(2.6226837e-07, 8)
+rotation = 3.1415925
+node_a = NodePath("..")
+node_b = NodePath("../../RigidTop")
+bias = 0.9
+softness = 16.0
+angular_limit_lower = -0.0017453292
+angular_limit_upper = 0.0017453292
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpokeVert"]
+position = Vector2(-4.371139e-07, 0)
+shape = SubResource("CapsuleShape2D_3j2do")
+
+[node name="TriadBarTopBL" type="RigidBody2D" parent="."]
+position = Vector2(-3.365, -2.15)
+rotation = 0.5235988
+
+[node name="Top" type="PinJoint2D" parent="TriadBarTopBL"]
+position = Vector2(-0.010824263, -6.7487483)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidTop")
+bias = 0.9
+softness = 1.12
+angular_limit_lower = -0.0017453292
+angular_limit_upper = 0.0017453292
+motor_enabled = true
+motor_target_velocity = -0.00017453292
+
+[node name="Bottom" type="PinJoint2D" parent="TriadBarTopBL"]
+position = Vector2(-0.07300246, 7.1435566)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBotLeft")
+bias = 0.9
+softness = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriadBarTopBL"]
+shape = SubResource("CapsuleShape2D_ygdeu")
+
+[node name="TriadBarTopBR" type="RigidBody2D" parent="."]
+position = Vector2(3.375, -2.15)
+rotation = -0.5235988
+
+[node name="Top" type="PinJoint2D" parent="TriadBarTopBR"]
+position = Vector2(0.0021640062, -6.753748)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidTop")
+bias = 0.9
+softness = 1.12
+angular_limit_lower = -0.0017453292
+angular_limit_upper = 0.0017453292
+motor_enabled = true
+motor_target_velocity = -0.00017453292
+
+[node name="Bottom" type="PinJoint2D" parent="TriadBarTopBR"]
+position = Vector2(0.06434202, 7.1385565)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBotRight")
+bias = 0.9
+softness = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriadBarTopBR"]
+shape = SubResource("CapsuleShape2D_ygdeu")
+
+[node name="TriadBarBRBL" type="RigidBody2D" parent="."]
+position = Vector2(0, 4)
+rotation = 1.5707964
+
+[node name="Top" type="PinJoint2D" parent="TriadBarBRBL"]
+position = Vector2(-3.8941437e-07, -7)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBotRight")
+bias = 0.9
+softness = 1.12
+angular_limit_lower = -0.0017453292
+angular_limit_upper = 0.0017453292
+motor_enabled = true
+motor_target_velocity = -0.00017453292
+
+[node name="Bottom" type="PinJoint2D" parent="TriadBarBRBL"]
+position = Vector2(3.8941437e-07, 7)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBotLeft")
+bias = 0.9
+softness = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriadBarBRBL"]
+shape = SubResource("CapsuleShape2D_ygdeu")
+
+[node name="TriadBarBotTL" type="RigidBody2D" parent="."]
+position = Vector2(-3.5, 2)
+rotation = 2.6179938
+
+[node name="Top" type="PinJoint2D" parent="TriadBarBotTL"]
+position = Vector2(-0.031088352, -6.9461527)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidTop")
+bias = 0.9
+softness = 1.12
+angular_limit_lower = -0.0017453292
+angular_limit_upper = 0.0017453292
+motor_enabled = true
+motor_target_velocity = -0.00017453292
+
+[node name="Bottom" type="PinJoint2D" parent="TriadBarBotTL"]
+position = Vector2(0.031088203, 6.946152)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBotLeft")
+bias = 0.9
+softness = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriadBarBotTL"]
+shape = SubResource("CapsuleShape2D_ygdeu")
+
+[node name="TriadBarBotTR" type="RigidBody2D" parent="."]
+position = Vector2(3.5, 1.97)
+rotation = 0.5235988
+
+[node name="Top" type="PinJoint2D" parent="TriadBarBotTR"]
+position = Vector2(0.031089157, -6.946152)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidTop")
+bias = 0.9
+softness = 1.12
+angular_limit_lower = -0.0017453292
+angular_limit_upper = 0.0017453292
+motor_enabled = true
+motor_target_velocity = -0.00017453292
+
+[node name="Bottom" type="PinJoint2D" parent="TriadBarBotTR"]
+position = Vector2(-0.031088889, 6.9461527)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBotRight")
+bias = 0.9
+softness = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriadBarBotTR"]
+shape = SubResource("CapsuleShape2D_ygdeu")
+
+[node name="TriadBarTLTR" type="RigidBody2D" parent="."]
+position = Vector2(0, -4)
+rotation = 4.712389
+
+[node name="Top" type="PinJoint2D" parent="TriadBarTLTR"]
+position = Vector2(2.3849761e-08, -7)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBotRight")
+bias = 0.9
+softness = 1.12
+angular_limit_lower = -0.0017453292
+angular_limit_upper = 0.0017453292
+motor_enabled = true
+motor_target_velocity = -0.00017453292
+
+[node name="Bottom" type="PinJoint2D" parent="TriadBarTLTR"]
+position = Vector2(-2.3849765e-08, 7)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBotLeft")
+bias = 0.9
+softness = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriadBarTLTR"]
+shape = SubResource("CapsuleShape2D_ygdeu")

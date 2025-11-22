@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://b6t13bxylo3qd"]
+
+[node name="TmpSpace" type="Node2D"]
+
+[node name="Triad1A" type="DampedSpringJoint2D" parent="."]
+position = Vector2(0, -10)
+rotation = -0.5235988
+node_a = NodePath("../RigidTop")
+node_b = NodePath("../RigidBotRight")
+bias = 0.9
+disable_collision = false
+length = 17.0
+stiffness = 64.0
+damping = 16.0
+
+[node name="Triad1B" type="DampedSpringJoint2D" parent="."]
+visible = false
+position = Vector2(9, 5)
+rotation = 1.5707964
+node_a = NodePath("../RigidBotRight")
+node_b = NodePath("../RigidBotLeft")
+bias = 0.9
+disable_collision = false
+length = 17.0
+stiffness = 64.0
+damping = 16.0
+
+[node name="Triad1C" type="DampedSpringJoint2D" parent="."]
+position = Vector2(-9, 5)
+rotation = -2.6179938
+node_a = NodePath("../RigidBotLeft")
+node_b = NodePath("../RigidTop")
+bias = 0.9
+disable_collision = false
+length = 17.0
+stiffness = 64.0
+damping = 16.0
+
+[node name="Triad2A" type="DampedSpringJoint2D" parent="."]
+position = Vector2(0, 10)
+rotation = 2.6179938
+node_a = NodePath("../RigidBot")
+node_b = NodePath("../RigidTopLeft")
+bias = 0.9
+disable_collision = false
+length = 17.0
+stiffness = 64.0
+damping = 16.0
+
+[node name="Triad2B" type="DampedSpringJoint2D" parent="."]
+visible = false
+position = Vector2(-9, -5)
+rotation = -1.5707964
+node_a = NodePath("../RigidTopLeft")
+node_b = NodePath("../RigidTopRight")
+bias = 0.9
+disable_collision = false
+length = 17.0
+stiffness = 64.0
+damping = 16.0
+
+[node name="Triad2C" type="DampedSpringJoint2D" parent="."]
+position = Vector2(9, -5)
+rotation = -5.759587
+node_a = NodePath("../RigidTopRight")
+node_b = NodePath("../RigidBot")
+bias = 0.9
+disable_collision = false
+length = 17.0
+stiffness = 64.0
+damping = 16.0
+
+[node name="SpokeHubTop" type="DampedSpringJoint2D" parent="."]
+visible = false
+rotation = 3.1415927
+node_a = NodePath("../RigidHub")
+node_b = NodePath("../RigidTop")
+disable_collision = false
+length = 10.0
+rest_length = 10.0
+stiffness = 64.0
+
+[node name="SpokeHubBot" type="DampedSpringJoint2D" parent="."]
+visible = false
+node_a = NodePath("../RigidHub")
+node_b = NodePath("../RigidBot")
+disable_collision = false
+length = 10.0
+rest_length = 10.0
+stiffness = 64.0

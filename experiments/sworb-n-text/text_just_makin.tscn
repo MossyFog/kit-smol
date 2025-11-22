@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv4tbxmcmf4bg"]
+
+[sub_resource type="GDScript" id="GDScript_yvf3t"]
+script/source = "@tool
+extends Label
+
+var tw : Tween
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	add_theme_color_override(\"font_color\", Color.WHITE)
+	add_theme_color_override(\"font_outline_color\", Color.BLACK)
+	
+	tw = create_tween()
+	tw.bind_node(self) # do I need dis? hmm
+	
+	tw.set_ease(Tween.EASE_IN_OUT)
+	tw.set_trans(Tween.TRANS_BOUNCE)
+	tw.set_loops(20) # uhhh, yeahhhh :D
+	
+	tw.set_parallel(true)
+	tw.tween_property(self, \"theme_override_colors/font_color\", Color.RED, 10.0)
+	tw.tween_property(self, \"theme_override_colors/font_outline_color\", Color.WHITE, 10.0)
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[node name="Label" type="Label"]
+offset_left = 8.469465
+offset_top = -8.242406
+offset_right = 48.469467
+offset_bottom = 14.757594
+scale = Vector2(0.15315497, 0.15315497)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 14
+text = "Just making,
+no plans :3
+
+Well okies I wanna
+throw 'em meow"
+script = SubResource("GDScript_yvf3t")

@@ -117,16 +117,6 @@ func _start_respawn_timer() -> void:
 
 
 # Signals
-## ⛔
-func _on_area_2d_boundary_body_shape_entered(
-	_body_rid: RID, _body: Node2D, _body_shape_index: int,
-	_local_shape_index: int) -> void:
-	#if (body == $"Area2D2"):
-		#print(body, " has collided.")
-		#_start_respawn_timer()
-	pass
-
-
 ##⌛
 func _on_respawn_timer_timeout() -> void:
 	respawn()

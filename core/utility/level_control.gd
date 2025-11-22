@@ -1,8 +1,9 @@
-# Level Control
 extends Node
+## Level Control
 
 @export var Level : Node2D
 @export var Camera : Camera2D
+
 
 func _ready() -> void:
 	pass

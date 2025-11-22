@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://xa55c4w1wd1w"]
+[gd_scene load_steps=10 format=3 uid="uid://xa55c4w1wd1w"]
 
 [ext_resource type="Script" uid="uid://dw7pt0ynf8f1m" path="res://core/playable/tiny_cat.gd" id="1_mteru"]
 [ext_resource type="SpriteFrames" uid="uid://c0ww7jgjgqqxb" path="res://core/playable/tiny_cat_spriteframes.tres" id="2_tq5vg"]
 [ext_resource type="Script" uid="uid://bg21wqrnagm8g" path="res://core/playable/sprite.gd" id="3_cqsv7"]
-[ext_resource type="PackedScene" uid="uid://b4sapj2rrxq2f" path="res://experiments/sworb-n-text/polygon_2d.tscn" id="4_tq5vg"]
+[ext_resource type="PackedScene" uid="uid://b4sapj2rrxq2f" path="res://experiments/sworb-n-text/sworb.tscn" id="4_tq5vg"]
 [ext_resource type="PackedScene" uid="uid://yyxkfblc7m70" path="res://experiments/tetherizer.tscn" id="5_yvf3t"]
+[ext_resource type="PackedScene" uid="uid://c87euemrl5mub" path="res://experiments/launcher.tscn" id="6_khlj8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6x4n"]
 radius = 2.0
@@ -54,8 +55,10 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_mteru")
 debug_color = Color(0.8156863, 0.68235296, 0.9647059, 0.23921569)
 
-[node name="Polygon2D" parent="." instance=ExtResource("4_tq5vg")]
+[node name="Sworb" parent="." instance=ExtResource("4_tq5vg")]
 position = Vector2(4.655098, 3.6295757)
 
 [node name="Tetherizer" parent="." node_paths=PackedStringArray("tether_target") instance=ExtResource("5_yvf3t")]
 tether_target = NodePath("..")
+
+[node name="Launcher" parent="." instance=ExtResource("6_khlj8")]

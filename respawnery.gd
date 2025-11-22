@@ -4,6 +4,7 @@ extends WeakRef
 
 
 func _ready() -> void:
+	Expression
 	pass
 
 

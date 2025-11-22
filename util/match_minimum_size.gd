@@ -4,9 +4,11 @@ extends Node
 @export var to_match : Node
 var parent : Node
 
+
 func _ready() -> void:
 	parent = get_parent()
-	
+	match_sizes()
+
 
 func match_sizes() -> Error:
 	var err = OK
@@ -21,7 +23,10 @@ func match_sizes() -> Error:
 	
 
 func match_node2d_sizes() -> void:
-	pass
-	
+	to_match.custom_minimum_size = parent.custom_minimum_size
+	print("matching node2d min sizes")
+
+
 func match_control_sizes() -> void:
-	pass
+	to_match.custom_minimum_size = parent.custom_minimum_size
+	print("matching control min sizes")

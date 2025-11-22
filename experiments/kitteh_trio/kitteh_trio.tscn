@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2053dc6nqylb"]
+[gd_scene load_steps=4 format=3 uid="uid://duvnn0j5rekkt"]
 
-[ext_resource type="Script" uid="uid://f5o0og4myjnv" path="res://experiments/spring_joint_of_kittehs/spring_joint_of_kittehs.gd" id="1_7bjk7"]
-[ext_resource type="Texture2D" uid="uid://bd5144ubv0lih" path="res://assets/cc0/tinycat_kirisoft/tinycat11x11.png" id="1_xxbvu"]
+[ext_resource type="Script" uid="uid://ctcqg5gppk1wd" path="res://experiments/kitteh_trio/kitteh_trio.gd" id="1_m15kt"]
+[ext_resource type="Texture2D" uid="uid://bd5144ubv0lih" path="res://assets/cc0/tinycat_kirisoft/tinycat11x11.png" id="2_xrf25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fmcma"]
 radius = 4.5
 
 [node name="SpringJointOfKittehs" type="Node2D" node_paths=PackedStringArray("points")]
 texture_filter = 1
-script = ExtResource("1_7bjk7")
+script = ExtResource("1_m15kt")
 points = [NodePath("RigidA"), NodePath("RigidB"), NodePath("RigidC")]
 
 [node name="JointAB" type="DampedSpringJoint2D" parent="."]
@@ -45,7 +45,7 @@ damping = 0.92
 mass = 0.102
 
 [node name="Sprite" type="Sprite2D" parent="RigidA"]
-texture = ExtResource("1_xxbvu")
+texture = ExtResource("2_xrf25")
 
 [node name="Collision" type="CollisionShape2D" parent="RigidA"]
 shape = SubResource("CircleShape2D_fmcma")
@@ -56,7 +56,7 @@ mass = 0.102
 
 [node name="Sprite" type="Sprite2D" parent="RigidB"]
 position = Vector2(9.536743e-07, 7.6293945e-06)
-texture = ExtResource("1_xxbvu")
+texture = ExtResource("2_xrf25")
 
 [node name="Collision" type="CollisionShape2D" parent="RigidB"]
 shape = SubResource("CircleShape2D_fmcma")
@@ -67,7 +67,7 @@ mass = 0.102
 
 [node name="Sprite" type="Sprite2D" parent="RigidC"]
 position = Vector2(9.536743e-07, 7.6293945e-06)
-texture = ExtResource("1_xxbvu")
+texture = ExtResource("2_xrf25")
 
 [node name="Collision" type="CollisionShape2D" parent="RigidC"]
 shape = SubResource("CircleShape2D_fmcma")

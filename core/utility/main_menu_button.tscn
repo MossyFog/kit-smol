@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcjb64lxr8ymd"]
+[gd_scene load_steps=3 format=3 uid="uid://dcjb64lxr8ymd"]
 
+[ext_resource type="Script" uid="uid://bhkv4yoknkhsu" path="res://core/ui/main_menu_button.gd" id="1_0y84t"]
 [ext_resource type="PackedScene" uid="uid://dnmf4qxnb8h4e" path="res://util/match_minimum_size.tscn" id="1_yc1ky"]
 
 [node name="MainMenu" type="Control"]
@@ -9,6 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+script = ExtResource("1_0y84t")
 
 [node name="MainMenuButton" type="Button" parent="."]
 layout_mode = 0
@@ -18,3 +20,5 @@ text = "MAIN MENU"
 
 [node name="MatchMinimumSize" parent="." node_paths=PackedStringArray("to_match") instance=ExtResource("1_yc1ky")]
 to_match = NodePath("../MainMenuButton")
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

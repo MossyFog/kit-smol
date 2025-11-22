@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4sapj2rrxq2f"]
+[gd_scene load_steps=3 format=3 uid="uid://b4sapj2rrxq2f"]
 
-[ext_resource type="Texture2D" uid="uid://77etq6aeipwf" path="res://experiments/sworb-n-text/sword_gradient.tres" id="1_3vuff"]
+[ext_resource type="Texture2D" uid="uid://77etq6aeipwf" path="res://experiments/sworb-n-text/sword_gradient.tres" id="1_gilmi"]
 
 [sub_resource type="GDScript" id="GDScript_cqsv7"]
 resource_name = "swordy"
@@ -53,66 +53,28 @@ func _process(_delta: float) -> void:
 		sword_gradient_res.gradient.set_color(2, col3)
 "
 
-[sub_resource type="GDScript" id="GDScript_yvf3t"]
-script/source = "@tool
-extends Label
+[node name="Sworb" type="RigidBody2D"]
 
-var tw : Tween
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	add_theme_color_override(\"font_color\", Color.WHITE)
-	add_theme_color_override(\"font_outline_color\", Color.BLACK)
-	
-	tw = create_tween()
-	tw.bind_node(self) # do I need dis? hmm
-	
-	tw.set_ease(Tween.EASE_IN_OUT)
-	tw.set_trans(Tween.TRANS_BOUNCE)
-	tw.set_loops(20) # uhhh, yeahhhh :D
-	
-	tw.set_parallel(true)
-	tw.tween_property(self, \"theme_override_colors/font_color\", Color.RED, 10.0)
-	tw.tween_property(self, \"theme_override_colors/font_outline_color\", Color.WHITE, 10.0)
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-"
-
-[node name="Sworb" type="Polygon2D"]
+[node name="SworbPolygon" type="Polygon2D" parent="."]
 rotation = 0.34508473
-offset = Vector2(-1.285, -1.115)
+offset = Vector2(-1.28, -1.115)
 antialiased = true
-texture = ExtResource("1_3vuff")
+texture = ExtResource("1_gilmi")
 texture_offset = Vector2(-0.82, 0)
 texture_scale = Vector2(1.22, 1.22)
 texture_rotation = 0.7766715
 polygon = PackedVector2Array(3.4848769, -5.639629, 3.8095548, -4.901669, 2.3445776, -0.38794547, 3.383734, 0.22561474, 2.711597, 1.4698943, 2.4255257, 0.51168597, 1.7533886, 1.7559657, 1.9362218, 2.3690948, 1.2753363, 2.3576777, 0.9147037, 2.0061536, 0.7767427, 1.456656, 1.3425239, 1.534036, 1.6160741, 0.38788158, 0.44077325, -1.0145068, 1.6879059, -0.5425518, 2.689703, -5.5065923)
 script = SubResource("GDScript_cqsv7")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 8.469465
-offset_top = -8.242406
-offset_right = 48.469467
-offset_bottom = 14.757594
-scale = Vector2(0.15315497, 0.15315497)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 14
-text = "Just making,
-no plans :3
-
-Well okies I wanna
-throw 'em meow"
-script = SubResource("GDScript_yvf3t")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-texture = ExtResource("1_3vuff")
+[node name="Polygon2D" type="Polygon2D" parent="SworbPolygon"]
+visible = false
+texture = ExtResource("1_gilmi")
 texture_offset = Vector2(3.095, 0)
 texture_scale = Vector2(2.1, 2.1)
 texture_rotation = -5.052728
 polygon = PackedVector2Array(0, 0, 4, 0, 4, 4, 0, 4)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1.0675591, -0.86161757)
+rotation = 0.34508473
+polygon = PackedVector2Array(1.4900007, -5.579656, 1.8146787, -4.8416963, 0.34970146, -0.32797283, 1.3888578, 0.2855874, 0.7167209, 1.5298669, 0.43064958, 0.5716586, -0.24148744, 1.8159384, -0.058654256, 2.4290676, -0.7195398, 2.4176505, -1.0801724, 2.0661263, -1.2181334, 1.5166286, -0.65235215, 1.5940087, -0.378802, 0.44785422, -1.5541029, -0.9545342, -0.30697018, -0.48257917, 0.6948269, -5.4466195)

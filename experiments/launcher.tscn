@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c87euemrl5mub"]
+
+[ext_resource type="Script" uid="uid://bl76q2og0415h" path="res://experiments/launcher.gd" id="1_wx6yd"]
+
+[node name="Launcher" type="Node2D"]
+rotation = 0.19896753
+script = ExtResource("1_wx6yd")
+launch_rotation = -95.5
