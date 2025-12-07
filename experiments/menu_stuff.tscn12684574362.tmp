@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpcnbcy40a1s1"]
+
+[ext_resource type="Texture2D" uid="uid://bd5144ubv0lih" path="res://assets/cc0/tinycat_kirisoft/tinycat11x11.png" id="1_fo7eb"]
+[ext_resource type="Script" uid="uid://bm3ppt17qrj8n" path="res://experiments/wow.gd" id="1_xx0t7"]
+[ext_resource type="Script" uid="uid://cxbkgra88y7gf" path="res://experiments/label.gd" id="2_rdrwd"]
+[ext_resource type="PackedScene" uid="uid://dt0mpk8o5m6an" path="res://experiments/intermission/intermission.tscn" id="4_b78fy"]
+
+[sub_resource type="GDScript" id="GDScript_b78fy"]
+script/source = "extends MenuBar
+
+var file_menu 		:= PopupMenu.new()
+var open 			:= PopupMenu.new()
+var reopen_last 	:= PopupMenu.new()
+var save 			:= PopupMenu.new()
+var save_as 		:= PopupMenu.new()
+var save_all 		:= PopupMenu.new()
+var quit 			:= PopupMenu.new()
+
+var projectMenu 	:= PopupMenu.new()
+var projectSettings := PopupMenu.new()
+
+var fun 			:= PopupMenu.new()
+var play 			:= PopupMenu.new()
+
+var editor 			:= PopupMenu.new()
+var some_submenu 	:= PopupMenu.new()
+
+var help 			:= PopupMenu.new()
+var about 			:= PopupMenu.new()
+
+var _submenus : Array[Submenu]
+@onready var lbl : Label = $\"../../PanelContainer/TabContainer/Debuggery\"
+
+func _ready() -> void:
+	pass
+	
+
+func _build_submenus():
+	var submenus_to_be : Array[PopupMenu]
+	#var sm = get_submenu_data()
+	
+	
+
+
+func get_submenu_data() -> Array[PopupMenu]:
+	var submenu_data : Array[PopupMenu]
+	#todo
+	return submenu_data
+"
+
+[node name="Window" type="Window"]
+oversampling_override = 1.0
+position = Vector2i(210, 60)
+size = Vector2i(400, 400)
+exclusive = true
+popup_window = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuBar" type="MenuBar" parent="VBoxContainer"]
+layout_mode = 2
+script = SubResource("GDScript_b78fy")
+
+[node name="File" type="PopupMenu" parent="VBoxContainer/MenuBar"]
+oversampling_override = 1.0
+size = Vector2i(227, 116)
+submenu_popup_delay = 0.03
+item_count = 4
+item_0/text = "New Kitty..."
+item_0/icon = ExtResource("1_fo7eb")
+item_0/id = 0
+item_1/text = "Open Kitty..."
+item_1/icon = ExtResource("1_fo7eb")
+item_1/id = 1
+item_2/text = "Huh?"
+item_2/id = 2
+item_3/text = "QUIT (this dang program)"
+item_3/id = 3
+script = ExtResource("1_xx0t7")
+
+[node name="Help" type="PopupMenu" parent="VBoxContainer/MenuBar"]
+oversampling_override = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(230.07, 200)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+current_tab = 0
+
+[node name="Debuggery" type="Label" parent="PanelContainer/TabContainer"]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("2_rdrwd")
+metadata/_tab_index = 0
+
+[node name="Intermission" type="ScrollContainer" parent="PanelContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Container" type="Container" parent="PanelContainer/TabContainer/Intermission"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Intermission" parent="PanelContainer/TabContainer/Intermission/Container" instance=ExtResource("4_b78fy")]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2

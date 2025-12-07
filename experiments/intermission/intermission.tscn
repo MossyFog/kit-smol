@@ -90,12 +90,13 @@ func _on_button_pressed() -> void:
 	_emit_text()
 "
 
-[node name="Intermission" type="Node2D"]
+[node name="Intermission" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_7ouuo")
 
 [node name="Control" type="Control" parent="."]
 custom_minimum_size = Vector2(800, 600)
-layout_mode = 3
 anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 600.0

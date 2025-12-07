@@ -20,7 +20,9 @@ offset_bottom = -3.0
 
 [node name="Main2D" parent="." instance=ExtResource("3_sceu4")]
 
+[node name="ExperimentTileMap" parent="Main2D/Tiles" index="2"]
+tile_map_data = PackedByteArray(0, 0, 12, 0, 251, 255, 0, 0, 0, 0, 0, 0, 1, 0, 245, 255, 253, 255, 0, 0, 0, 0, 0, 0, 1, 0, 7, 0, 248, 255, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 249, 255, 0, 0, 0, 0, 0, 0, 1, 0)
+
 [editable path="MainCanvas"]
 [editable path="Main2D"]
 [editable path="Main2D/TinyCat"]
-[editable path="Main2D/SpringJointOfKittehs2"]
