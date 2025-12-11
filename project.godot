@@ -30,6 +30,7 @@ folder_colors={
 "res://addons/": "gray",
 "res://assets/": "blue",
 "res://core/": "green",
+"res://docs/": "purple",
 "res://experiments/": "red",
 "res://experiments/z-archive_or_trash/": "gray",
 "res://global_scripts/": "gray",

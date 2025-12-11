@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bg21wqrnagm8g" path="res://core/playable/sprite.gd" id="3_cqsv7"]
 [ext_resource type="PackedScene" uid="uid://b4sapj2rrxq2f" path="res://experiments/sworb-n-text/sworb.tscn" id="4_tq5vg"]
 [ext_resource type="PackedScene" uid="uid://yyxkfblc7m70" path="res://experiments/tetherizer.tscn" id="5_yvf3t"]
-[ext_resource type="PackedScene" uid="uid://c87euemrl5mub" path="res://experiments/launcher.tscn" id="6_khlj8"]
+[ext_resource type="PackedScene" uid="uid://c87euemrl5mub" path="res://experiments/node_thrower.tscn" id="6_khlj8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6x4n"]
 radius = 2.0
