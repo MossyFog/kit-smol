@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=4 uid="uid://bwrkx8u1i1jrm"]
+[gd_scene load_steps=19 format=4 uid="uid://bwrkx8u1i1jrm"]
 
 [ext_resource type="PackedScene" uid="uid://xa55c4w1wd1w" path="res://core/playable/tiny_cat.tscn" id="1_0giuk"]
 [ext_resource type="PackedScene" uid="uid://b6mw1wvhx5lct" path="res://core/item/collectable.tscn" id="1_6a3es"]
 [ext_resource type="Script" uid="uid://d02pk7cw5xpp5" path="res://core/utility/level_control.gd" id="1_bi5lt"]
+[ext_resource type="Script" uid="uid://enmptpa4suo2" path="res://core/world/level_test_01.gd" id="1_lq8uj"]
 [ext_resource type="PackedScene" uid="uid://b2053dc6nqylb" path="res://experiments/kitteh_wheel/kitteh_wheel.tscn" id="3_bsgei"]
 [ext_resource type="Texture2D" uid="uid://rhukjdkpus85" path="res://assets/md0/md0-mossyfog_saftey-grate_p220928.png" id="3_ourwl"]
 [ext_resource type="Script" uid="uid://nes2pqd0g30u" path="res://core/world/experiment_tile_map.gd" id="6_bijdj"]
@@ -53,11 +54,10 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="LevelTest01" type="Node2D"]
+script = ExtResource("1_lq8uj")
 
-[node name="LevelControl" type="Node" parent="." node_paths=PackedStringArray("Level", "Camera")]
+[node name="LevelControl" type="Node" parent="."]
 script = ExtResource("1_bi5lt")
-Level = NodePath("..")
-Camera = NodePath("../TinyCat/Area2D/Camera2D")
 
 [node name="Tiles" type="Node2D" parent="."]
 

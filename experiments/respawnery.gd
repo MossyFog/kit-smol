@@ -2,9 +2,9 @@ class_name Respawnery
 extends WeakRef
 ## Respawnery contains respawn uhhhh... stuff :3
 
+var spawn_point : Vector2 = Vector2(0,0)
 
 func _ready() -> void:
-	Expression
 	pass
 
 

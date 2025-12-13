@@ -1,13 +1,12 @@
+class_name LevelControl
 extends Node
 ## Level Control
 
-@export var Level : Node2D
-@export var Camera : Camera2D
+var ready_to_load = false
 
+func verify_level(level : Level) -> bool:
+	return level.verify()
 
-func _ready() -> void:
-	pass
-
-
-func _process(_delta: float) -> void:
-	pass
+func change_level(level : Level) -> void:
+	if (ready_to_load):
+		load(level.get_path())

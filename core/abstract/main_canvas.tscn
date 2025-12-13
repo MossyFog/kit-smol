@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://j6gl0ifrarp1" path="res://core/ui/corner_interface.tscn" id="2_ep1fn"]
 [ext_resource type="PackedScene" uid="uid://uk8ugop8wmel" path="res://core/ui/main_menu.tscn" id="5_3tp8m"]
 
-[node name="MainControl" type="CanvasLayer" node_paths=PackedStringArray("main_menu")]
+[node name="MainCanvas" type="CanvasLayer" node_paths=PackedStringArray("main_menu")]
 script = ExtResource("1_3jnx6")
 main_menu = NodePath("MainMenuWindow")
 
