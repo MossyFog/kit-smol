@@ -6,7 +6,8 @@ enum EntityType {
 }
 
 @export var entity_to_spawn : EntityType
-
+var governing_respawnery : Respawnery
 
 func _ready() -> void:
-	pass
+	if governing_respawnery.is_valid():
+		

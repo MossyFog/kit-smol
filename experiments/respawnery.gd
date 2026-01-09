@@ -1,5 +1,5 @@
 class_name Respawnery
-extends WeakRef
+extends Node2D
 ## Respawnery contains respawn uhhhh... stuff :3
 
 var spawn_point : Vector2 = Vector2(0,0)
