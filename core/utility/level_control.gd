@@ -1,5 +1,7 @@
 class_name LevelControl
 extends Node
+
+@export var start_level : Node2D
 ## Level Control
 
 var ready_to_load = false

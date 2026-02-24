@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://d21ninfolaj2t"]
+[gd_resource type="TileSet" format=3 uid="uid://d21ninfolaj2t"]
 
 [ext_resource type="Texture2D" uid="uid://rhukjdkpus85" path="res://assets/md0/md0-mossyfog_saftey-grate_p220928.png" id="1_08h64"]
 [ext_resource type="PhysicsMaterial" uid="uid://b18rf4uf148co" path="res://core/world/floor_physics_material.tres" id="1_p5ny7"]

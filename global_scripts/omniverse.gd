@@ -26,7 +26,7 @@ func get_current_universe() -> Universe:
 	return current_multiverse.get_current_universe()
 
 func set_current_universe(universe : Universe) -> void:
-	if (current_multiverse = null):
+	if (current_multiverse == null):
 		current_multiverse.current_universe = make_universe()
 
 func get_all_multiverses() -> Array[Multiverse]:
