@@ -1,4 +1,10 @@
 extends Level
 
+var level_name : String
+var can_exit : bool
+
 func _init() -> void:
-	pass
+	level_name = "Level Test 01"
+
+func _ready() -> void:
+	can_exit = multiverse.tester.exit_reachable()

@@ -27,6 +27,9 @@ boot_splash/minimum_display_time=280
 [autoload]
 
 Conversions="*res://global_scripts/conversions.gd"
+omniverse="*uid://yq4ipjsvn7t4"
+multiverse="*uid://cb2tqq1hxoy6w"
+universe="*uid://b68esysdw4jhv"
 
 [file_customization]
 
