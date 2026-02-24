@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3uwhqietc2vl"]
+[gd_scene format=3 uid="uid://d3uwhqietc2vl"]
 
 [ext_resource type="Script" uid="uid://dsns6us1bvp2p" path="res://core/ui/fuel_hud.gd" id="1_q4o41"]
 
@@ -22,7 +22,7 @@ func _on_tiny_cat_spend_fuel(cost : float) -> float:
 	return value
 "
 
-[node name="FuelHUD" type="Control"]
+[node name="FuelHUD" type="Control" unique_id=745471560]
 modulate = Color(0.02745098, 1, 1, 0.3764706)
 layout_mode = 3
 anchors_preset = 0
@@ -32,22 +32,27 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_q4o41")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1459372168]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=550834876]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(12, 12)
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1260599005]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1635616972]
+custom_minimum_size = Vector2(12, 42)
 layout_mode = 2
 text = "FUEL"
+horizontal_alignment = 1
 autowrap_mode = 1
 
-[node name="FuelVSlider" type="VSlider" parent="PanelContainer/HBoxContainer"]
+[node name="FuelVSlider" type="VSlider" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=995974854]
+custom_minimum_size = Vector2(4, 64)
 layout_mode = 2
 step = 0.01
 value = 90.0
@@ -58,13 +63,9 @@ ticks_on_borders = true
 ticks_position = 3
 script = SubResource("GDScript_irrls")
 
-[node name="LabelGauge" type="Label" parent="PanelContainer/HBoxContainer/FuelVSlider"]
+[node name="LabelGauge" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1622650450]
 custom_minimum_size = Vector2(12, 12)
-layout_mode = 0
-offset_left = -16.0
-offset_top = 97.0
-offset_right = 24.0
-offset_bottom = 120.0
+layout_mode = 2
 size_flags_vertical = 8
 text = "FUEL"
 autowrap_mode = 1

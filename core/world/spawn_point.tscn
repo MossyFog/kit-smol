@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://1eb7vbalvf1u"]
+[gd_scene format=3 uid="uid://1eb7vbalvf1u"]
 
 [ext_resource type="Script" uid="uid://dbhtuk8kwae4a" path="res://core/world/spawn_point.gd" id="1_00gca"]
 
-[node name="SpawnPoint" type="Marker2D"]
+[node name="SpawnPoint" type="Marker2D" unique_id=1956704565]
 gizmo_extents = 30.0
 script = ExtResource("1_00gca")

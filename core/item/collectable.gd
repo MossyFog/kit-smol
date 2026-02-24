@@ -3,6 +3,7 @@ extends Node2D
 
 signal send_fuel
 @export var type : CollectableType
+@export var value : float = 0
 
 
 func _ready() -> void:
