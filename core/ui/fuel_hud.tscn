@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func update_label_gauge() -> void:
-	$LabelGauge.text = str(value) + \"/\" + str(max_value)
+	$\"../../LabelGauge\".text = str(value) + \"/\" + str(max_value)
 
 func _on_tiny_cat_spend_fuel(cost : float) -> float:
 	value = value - cost
