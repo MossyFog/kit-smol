@@ -1,27 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtqkegnm2kqpn"]
+[gd_scene format=3 uid="uid://dtqkegnm2kqpn"]
 
 [ext_resource type="Script" uid="uid://bee3rexh5vdn1" path="res://core/abstract/main.gd" id="1_arotc"]
 [ext_resource type="PackedScene" uid="uid://rhukoj80kgmq" path="res://core/abstract/main_canvas.tscn" id="1_gg7qk"]
 [ext_resource type="PackedScene" uid="uid://uk8ugop8wmel" path="res://core/ui/main_menu.tscn" id="2_arotc"]
 [ext_resource type="PackedScene" uid="uid://bwrkx8u1i1jrm" path="res://core/world/level_test_01.tscn" id="3_sceu4"]
 
-[node name="Main" type="Node" node_paths=PackedStringArray("main_canvas", "main_node_2d")]
+[node name="Main" type="Node" unique_id=1854363420 node_paths=PackedStringArray("main_canvas", "main_node_2d")]
 editor_description = "Main Game"
 script = ExtResource("1_arotc")
 main_canvas = NodePath("MainCanvas")
 main_node_2d = NodePath("Main2D")
 
-[node name="MainCanvas" parent="." instance=ExtResource("1_gg7qk")]
+[node name="MainCanvas" parent="." unique_id=1903190672 instance=ExtResource("1_gg7qk")]
 
-[node name="MainMenu2" parent="MainCanvas" instance=ExtResource("2_arotc")]
+[node name="MainMenu2" parent="MainCanvas" unique_id=837685672 instance=ExtResource("2_arotc")]
 visible = false
 offset_top = -3.0
 offset_bottom = -3.0
 
-[node name="Main2D" parent="." instance=ExtResource("3_sceu4")]
+[node name="Main2D" parent="." unique_id=768863711 instance=ExtResource("3_sceu4")]
 
 [node name="ExperimentTileMap" parent="Main2D/Tiles" index="2"]
 tile_map_data = PackedByteArray(0, 0, 12, 0, 251, 255, 0, 0, 0, 0, 0, 0, 1, 0, 245, 255, 253, 255, 0, 0, 0, 0, 0, 0, 1, 0, 7, 0, 248, 255, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 249, 255, 0, 0, 0, 0, 0, 0, 1, 0)
+
+[node name="Launcher" parent="Main2D/TinyCat" index="4"]
+launch_direction = null
+launch_pulse = null
+launch_delay = null
+launch_rotation = null
 
 [editable path="MainCanvas"]
 [editable path="Main2D"]

@@ -2,21 +2,27 @@ class_name Omniverse
 extends Node
 ## Omniverse
 
-var universes : Array[Array]
-var current_universe : Universe
-var tester : Tester = Tester.new()
+var test = preload("res://core/utility/tester.gd")
+var phys = preload("res://core/abstract/physics_set.gd")
 
+## All available and loaded universes
+var universes : Array[Universe]
+## The current universe
+var current_universe : Universe
+## Tests things
+var tester = test.Tester.new()
+
+## Universe readying and setup
 func _ready() -> void:
-	current_universe = make_universe()
+	setup_physics(phys)
+	var new_universe = make_universe()
+	if current_universe == null:
+		current_universe = new_universe
+	
+
+func setup_physics(physicsSet) -> void:
+	pass
 
 func make_universe() -> Universe:
 	var new_universe = Universe.new()
-	if current_universe == null:
-		current_universe = new_universe
 	return new_universe
-
-class Tester:
-	func exit_reachable() -> bool:
-		# check if there's a flippin' exit
-		# check if the exit is reachable
-		return true

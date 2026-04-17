@@ -1,9 +1,16 @@
 # Title
 ## Game Name:
 KIT SMOL
+or: Kit Smol, kit-smol
 ## Company/Solo Name
-Game Programming & Development Club
-(or..) MossyFog, FogMoss, etc
+[Game Programming & Development Club](https://gpdmcc.org)
+[MossyFog](https://gitlab.com/mossyclouds/mossyfog):
+	(MossyCloud's MossyFog subgroup. (F)ree (O)pen (G)ames.)
+[MistMoss](https://gitlab.com/mossyclouds/mossyfog/mistmoss):
+	...the subgroup of MossyFog, is an experimental - and potentially temporary
+	- get-together of loosely-interested individuals who would like to try
+	making MD0 licensed content.
+
 ## Your Name
 Nohbdy Ahtall (NohbdyAhtall)
 ## Writer's Name

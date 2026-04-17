@@ -5,7 +5,9 @@ extends Node2D
 @export var points : Array[RigidBody2D]
 
 func _ready() -> void:
-	pass
+	var rigids = find_children("Rigid?", "RigidBody2D", true, true)
+	for r in rigids:
+		points.push_back(r as RigidBody2D)
 
 func _draw() -> void:
 	##TODO iterator/index stuff + this is incomplete/untested

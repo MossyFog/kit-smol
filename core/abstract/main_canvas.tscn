@@ -17,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_mode = 1
 
 [node name="CornerTL" parent="CornerInterfaces" unique_id=1940874054 instance=ExtResource("2_ep1fn")]
 layout_mode = 0
@@ -63,3 +64,4 @@ pivot_offset = Vector2(200, 200)
 visible = false
 offset_top = -3.0
 offset_bottom = -3.0
+mouse_filter = 1

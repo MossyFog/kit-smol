@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://d0pkcly1euuv0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l7it"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.15686275, 0.047058824, 0.18039216, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="FontFile" id="FontFile_qus3v"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="TychesSingingAlonMor" type="CanvasLayer" unique_id=96727912]
+metadata/info = "Tyche's Singing on album Long Awaited Journey by Alon Mor"
+
+[node name="Panel" type="Panel" parent="." unique_id=1616231022]
+offset_right = 1013.0
+offset_bottom = 655.0
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=967713762]
+layout_mode = 0
+offset_right = 1013.0
+offset_bottom = 655.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1l7it")
+
+[node name="Panel" type="Panel" parent="Panel/Panel" unique_id=316992463]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 33.0
+offset_right = 499.0
+offset_bottom = 497.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1l7it")
+
+[node name="Label" type="Label" parent="Panel/Panel/Panel" unique_id=1603400122]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 36.0
+offset_right = 489.0
+offset_bottom = 423.0
+theme_override_fonts/font = SubResource("FontFile_qus3v")
+text = "I've been flipping this coin for years now
+Been trying to find some order in the events
+Sometimes I'm sure I've found a reason
+A pattern
+Some rules that re-occur
+But then I flip again and this question comes back
+Is it all random, or is it all planned?
+
+I'm looking at these walls and this sound is eating my ear
+She said I need a landscape
+A room for something clear
+Leave me, I said
+I need to work now, hard
+I need to reach it all
+Before it is too far"
+
+[node name="Panel2" type="Panel" parent="Panel/Panel" unique_id=2130230498]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 59.0
+offset_right = 993.0
+offset_bottom = 514.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1l7it")
+
+[node name="Label2" type="Label" parent="Panel/Panel/Panel2" unique_id=544335282]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 36.0
+offset_right = 490.0
+offset_bottom = 839.0
+theme_override_fonts/font = SubResource("FontFile_qus3v")
+text = "I'm walking in circles and planing for the bridge
+How does a person feel, when he's the one who reached?
+How can I give her the moon, like I promised back then?
+What would I do?
+Will it ever end?
+We loved the night so much, but now I need the day
+Is this the only way?
+To be reaching far away?
+
+That's it
+I'm flipping this coin, to get an answer from the luck
+I need to be precise, I know I'll be alright
+I flipped it and asked the question that should solve it all
+I asked about the bridge and the coin said
+No"

@@ -22,4 +22,4 @@ func _on_camera_2d_item_rect_changed() -> void:
 
 
 func _on_main_menu_button_pressed() -> void:
-	main_menu.visible = true
+	main_menu.visible = !main_menu.visible

@@ -45,6 +45,7 @@ func _process(_delta: float) -> void:
 	var pressing_jump  : bool = Input.is_action_pressed("jump")
 	var scroll_up      : bool = Input.is_action_pressed("scroll_up")
 	var scroll_down    : bool = Input.is_action_pressed("scroll_down")
+	var launch         : bool = Input.is_action_pressed("attack1")
 	
 	# Do inputs 🎬
 	if (pressing_left):  #⬅️
@@ -67,6 +68,9 @@ func _process(_delta: float) -> void:
 	if (scroll_down):
 		print("scrollydown")
 		myCamera.zoom -= Vector2(0.1, 0.1)
+	if (launch):
+		print("launching")
+		$Launcher.launch()
 	
 	queue_redraw()
 

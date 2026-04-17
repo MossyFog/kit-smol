@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://duvnn0j5rekkt"]
+[gd_scene format=3 uid="uid://duvnn0j5rekkt"]
 
 [ext_resource type="Script" uid="uid://ctcqg5gppk1wd" path="res://experiments/kitteh_trio/kitteh_trio.gd" id="1_m15kt"]
 [ext_resource type="Texture2D" uid="uid://bd5144ubv0lih" path="res://assets/cc0/tinycat_kirisoft/tinycat11x11.png" id="2_xrf25"]
@@ -6,12 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_fmcma"]
 radius = 4.5
 
-[node name="SpringJointOfKittehs" type="Node2D" node_paths=PackedStringArray("points")]
+[node name="SpringJointOfKittehs" type="Node2D" unique_id=1490859313 node_paths=PackedStringArray("points")]
 texture_filter = 1
 script = ExtResource("1_m15kt")
 points = [NodePath("RigidA"), NodePath("RigidB"), NodePath("RigidC")]
 
-[node name="JointAB" type="DampedSpringJoint2D" parent="."]
+[node name="JointAB" type="DampedSpringJoint2D" parent="." unique_id=2115494365]
 node_a = NodePath("../RigidA")
 node_b = NodePath("../RigidB")
 bias = 0.9
@@ -19,7 +19,7 @@ length = 48.0
 rest_length = 42.0
 damping = 0.92
 
-[node name="JointBC" type="DampedSpringJoint2D" parent="."]
+[node name="JointBC" type="DampedSpringJoint2D" parent="." unique_id=457615913]
 unique_name_in_owner = true
 position = Vector2(0, 50.511707)
 rotation = -2.2300117
@@ -30,7 +30,7 @@ length = 48.0
 rest_length = 42.0
 damping = 0.92
 
-[node name="JointCA" type="DampedSpringJoint2D" parent="."]
+[node name="JointCA" type="DampedSpringJoint2D" parent="." unique_id=1056109660]
 unique_name_in_owner = true
 position = Vector2(32.317917, 26.811897)
 rotation = 2.26552
@@ -41,33 +41,33 @@ length = 48.0
 rest_length = 42.0
 damping = 0.92
 
-[node name="RigidA" type="RigidBody2D" parent="."]
+[node name="RigidA" type="RigidBody2D" parent="." unique_id=420705760]
 mass = 0.102
 
-[node name="Sprite" type="Sprite2D" parent="RigidA"]
+[node name="Sprite" type="Sprite2D" parent="RigidA" unique_id=1211797396]
 texture = ExtResource("2_xrf25")
 
-[node name="Collision" type="CollisionShape2D" parent="RigidA"]
+[node name="Collision" type="CollisionShape2D" parent="RigidA" unique_id=533322048]
 shape = SubResource("CircleShape2D_fmcma")
 
-[node name="RigidB" type="RigidBody2D" parent="."]
+[node name="RigidB" type="RigidBody2D" parent="." unique_id=1400743041]
 position = Vector2(-0.7915678, 50.019875)
 mass = 0.102
 
-[node name="Sprite" type="Sprite2D" parent="RigidB"]
+[node name="Sprite" type="Sprite2D" parent="RigidB" unique_id=744547166]
 position = Vector2(9.536743e-07, 7.6293945e-06)
 texture = ExtResource("2_xrf25")
 
-[node name="Collision" type="CollisionShape2D" parent="RigidB"]
+[node name="Collision" type="CollisionShape2D" parent="RigidB" unique_id=933278911]
 shape = SubResource("CircleShape2D_fmcma")
 
-[node name="RigidC" type="RigidBody2D" parent="."]
+[node name="RigidC" type="RigidBody2D" parent="." unique_id=1180323840]
 position = Vector2(32, 26.500008)
 mass = 0.102
 
-[node name="Sprite" type="Sprite2D" parent="RigidC"]
+[node name="Sprite" type="Sprite2D" parent="RigidC" unique_id=531874958]
 position = Vector2(9.536743e-07, 7.6293945e-06)
 texture = ExtResource("2_xrf25")
 
-[node name="Collision" type="CollisionShape2D" parent="RigidC"]
+[node name="Collision" type="CollisionShape2D" parent="RigidC" unique_id=1063149832]
 shape = SubResource("CircleShape2D_fmcma")

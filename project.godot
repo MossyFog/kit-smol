@@ -29,6 +29,11 @@ boot_splash/minimum_display_time=280
 Conversions="*res://global_scripts/conversions.gd"
 omniverse="*uid://yq4ipjsvn7t4"
 
+[editor]
+
+movie_writer/video_quality=0.1
+movie_writer/movie_file="C:/zxc/xtnd/godot-mov.avi"
+
 [file_customization]
 
 folder_colors={

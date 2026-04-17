@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c87euemrl5mub"]
 
 [ext_resource type="Script" uid="uid://bl76q2og0415h" path="res://experiments/node_thrower.gd" id="1_wx6yd"]
+[ext_resource type="PackedScene" uid="uid://duvnn0j5rekkt" path="res://experiments/kitteh_trio/kitteh_trio.tscn" id="2_jd4ia"]
 
 [node name="NodeThrower" type="Node2D" unique_id=864163091]
 script = ExtResource("1_wx6yd")
+launch_item = ExtResource("2_jd4ia")
+
+[node name="Timer" type="Timer" parent="." unique_id=173842284]
