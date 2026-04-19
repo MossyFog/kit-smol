@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://uk8ugop8wmel"]
 
 [ext_resource type="Script" uid="uid://k267ldu510l4" path="res://core/ui/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://bnb0ecl7ucol4" path="res://experiments/menu_gradient_thing.gd" id="2_gsiyq"]
+[ext_resource type="Script" uid="uid://c0y5mjwu13ka4" path="res://experiments/menu_slider_thing.gd" id="3_4mmo1"]
 
 [sub_resource type="Curve" id="Curve_ekxnf"]
-_data = [Vector2(0.15025908, 0.21348321), 0.0, 0.0, 0, 0, Vector2(0.81865287, 0.32584274), -4.4919753, -4.4919753, 0, 0, Vector2(0.9067358, 0.04494381), -73.72997, 0.0, 0, 0]
+_data = [Vector2(0.15025908, 0.21348321), -4.4919753, -4.4919753, 0, 0, Vector2(1, 0.213), 0.0, 0.0, 0, 0, Vector2(1, 0.213), -73.72997, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_bqqt6"]
 curve = SubResource("Curve_ekxnf")
 
 [sub_resource type="Curve" id="Curve_wu84c"]
-_data = [Vector2(0.20207256, 0.47191018), 0.0, 0.0, 0, 0, Vector2(0.31606218, 0), -11.204121, -11.204121, 0, 0, Vector2(0.6632124, 0.3370787), -4.4919753, -4.4919753, 0, 0]
+_data = [Vector2(0.20207256, 0.47191018), -4.4919753, -4.4919753, 0, 0, Vector2(0.892, 0.472), 0.0, 0.0, 0, 0, Vector2(0.902, 0.472), -11.204121, -11.204121, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_8ln24"]
@@ -83,9 +85,22 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("CurveTexture_bqqt6")
+script = ExtResource("2_gsiyq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox" unique_id=629425961]
+layout_mode = 2
+
+[node name="LabelSlider" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HBoxContainer" unique_id=214971029]
+layout_mode = 2
+text = "Some Slidey Thing: "
+
+[node name="LabelVal" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HBoxContainer" unique_id=2079099911]
+layout_mode = 2
+text = "???"
 
 [node name="HSlider" type="HSlider" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox" unique_id=1744189169]
 layout_mode = 2
+script = ExtResource("3_4mmo1")
 
 [node name="HBoxMain2" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox" unique_id=1150050123]
 custom_minimum_size = Vector2(32, 32)
@@ -103,8 +118,29 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("CurveTexture_8ln24")
+script = ExtResource("2_gsiyq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox" unique_id=365867098]
+layout_mode = 2
+
+[node name="LabelSlider" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HBoxContainer" unique_id=38508221]
+layout_mode = 2
+text = "Some Slidey Thing: "
+
+[node name="LabelVal" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HBoxContainer" unique_id=1548654751]
+layout_mode = 2
+text = "???"
 
 [node name="HSlider" type="HSlider" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox" unique_id=1061136609]
 layout_mode = 2
+script = ExtResource("3_4mmo1")
 
 [connection signal="pressed" from="Center/Panel/Margin/MenuVBox/TitleBar/Close" to="." method="_on_button_close_pressed"]
+[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/Gradient" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/Gradient" method="_on_h_slider_value_changed"]
+[connection signal="value_changed_2" from="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/Gradient" method="_on_h_slider_value_changed_2"]
+[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/Gradient" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/Gradient" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" method="_on_value_changed"]
+[connection signal="value_changed_2" from="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/Gradient" method="_on_h_slider_value_changed_2"]
