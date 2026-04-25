@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c0y5mjwu13ka4" path="res://experiments/menu_slider_thing.gd" id="3_4mmo1"]
 
 [sub_resource type="Curve" id="Curve_ekxnf"]
-_data = [Vector2(0.15025908, 0.21348321), -4.4919753, -4.4919753, 0, 0, Vector2(1, 0.213), 0.0, 0.0, 0, 0, Vector2(1, 0.213), -73.72997, 0.0, 0, 0]
+_data = [Vector2(0.12, 0.213), -4.4919753, -4.4919753, 0, 0, Vector2(1, 0.213), 0.0, 0.0, 0, 0, Vector2(1, 0.213), -73.72997, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_bqqt6"]

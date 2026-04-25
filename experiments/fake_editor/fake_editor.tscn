@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cdqpkgbc1v1dd"]
+
+[sub_resource type="SystemFont" id="SystemFont_jutes"]
+font_names = PackedStringArray("Sniglet")
+
+[sub_resource type="FontVariation" id="FontVariation_e1rn0"]
+base_font = SubResource("SystemFont_jutes")
+variation_embolden = 1.34
+spacing_glyph = 11
+spacing_space = 19
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e5c2"]
+bg_color = Color(0.5808054, 0.07813371, 0.47650826, 1)
+skew = Vector2(0.125, 0.215)
+border_width_left = 20
+border_width_top = 23
+border_width_right = 11
+border_width_bottom = 8
+expand_margin_left = 100.0
+expand_margin_top = 100.0
+expand_margin_right = 100.0
+expand_margin_bottom = 100.0
+shadow_size = 60
+
+[node name="FakeEditor" type="Control" unique_id=2002586094]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Window" type="Window" parent="." unique_id=1036369503]
+oversampling_override = 1.0
+title = "Fake Godot Engine"
+position = Vector2i(0, 36)
+size = Vector2i(800, 600)
+theme_override_fonts/title_font = SubResource("FontVariation_e1rn0")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_8e5c2")
+
+[node name="VBoxTopmost" type="VBoxContainer" parent="Window" unique_id=2115828196]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxTopmost" type="HBoxContainer" parent="Window/VBoxTopmost" unique_id=1132128059]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="Window/VBoxTopmost/HBoxTopmost" unique_id=607690670]
+layout_mode = 2
+
+[node name="Scene" type="PopupMenu" parent="Window/VBoxTopmost/HBoxTopmost/MenuBar" unique_id=1723344792]
+
+[node name="Project" type="PopupMenu" parent="Window/VBoxTopmost/HBoxTopmost/MenuBar" unique_id=897261922]
+
+[node name="Debug" type="PopupMenu" parent="Window/VBoxTopmost/HBoxTopmost/MenuBar" unique_id=245668361]
+
+[node name="Editor" type="PopupMenu" parent="Window/VBoxTopmost/HBoxTopmost/MenuBar" unique_id=1127613525]
+
+[node name="Help" type="PopupMenu" parent="Window/VBoxTopmost/HBoxTopmost/MenuBar" unique_id=1342608002]
