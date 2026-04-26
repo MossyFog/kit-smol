@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://dfandpnnv0xcy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afo6w"]
+bg_color = Color(0.6350208, 0.53854144, 0.8413748, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb7kb"]
+bg_color = Color(0.6857224, 0.48600054, 0.9239392, 1)
+
+[resource]
+Label/colors/font_color = Color(0, 1, 1, 1)
+Label/colors/font_outline_color = Color(0.6862745, 0.14901961, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0.32156864, 0, 0.68235296)
+Label/constants/outline_size = 2
+Label/constants/shadow_offset_x = 3
+Label/constants/shadow_outline_size = 3
+Label/styles/focus = SubResource("StyleBoxFlat_afo6w")
+Label/styles/normal = SubResource("StyleBoxFlat_fb7kb")

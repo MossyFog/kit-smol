@@ -11,6 +11,16 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_bqqt6"]
 curve = SubResource("Curve_ekxnf")
 
+[sub_resource type="GDScript" id="GDScript_gsiyq"]
+script/source = "extends Label
+
+func _make_custom_tooltip(for_text: String) -> Object:
+	var label = Label.new()
+	label.text = text
+	label.theme = load(\"res://core/ui/tooltip_theme.tres\")
+	return label
+"
+
 [sub_resource type="Curve" id="Curve_wu84c"]
 _data = [Vector2(0.20207256, 0.47191018), -4.4919753, -4.4919753, 0, 0, Vector2(0.892, 0.472), 0.0, 0.0, 0, 0, Vector2(0.902, 0.472), -11.204121, -11.204121, 0, 0]
 point_count = 3
@@ -96,7 +106,9 @@ text = "Some Slidey Thing: "
 
 [node name="LabelVal" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HBoxContainer" unique_id=2079099911]
 layout_mode = 2
+mouse_filter = 1
 text = "???"
+script = SubResource("GDScript_gsiyq")
 
 [node name="HSlider" type="HSlider" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox" unique_id=1744189169]
 layout_mode = 2
