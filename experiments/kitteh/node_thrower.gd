@@ -23,7 +23,7 @@ func launch() -> void:
 		var item = launch_item.instantiate()
 		add_sibling(item)
 		
-		if (launch_item.resource_path == "res://experiments/kitteh_trio/kitteh_trio.tscn"):
+		if (launch_item.resource_path == "res://experiments/kitteh/kitteh_trio/kitteh_trio.tscn"):
 			item.points[0].apply_central_impulse(launch_direction * launch_pulse)
 		else:
 			item.apply_central_impulse(launch_direction * launch_pulse)
