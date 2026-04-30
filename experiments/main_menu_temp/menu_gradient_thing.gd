@@ -21,5 +21,5 @@ func change_that_thing(point: int, axis: AXIS, value: float) -> void:
 func _on_h_slider_value_changed(value: float) -> void:
 	change_that_thing(0, AXIS.x, value)
 
-func _on_h_slider_value_changed_2(value: float) -> void:
+func on_h_slider_value_changed_2(value: float) -> void:
 	change_that_thing(1, AXIS.x, value)

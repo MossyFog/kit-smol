@@ -1,11 +1,11 @@
-[gd_scene load_steps=21 format=4 uid="uid://7q6m5ckgrwsx"]
+[gd_scene format=4 uid="uid://7q6m5ckgrwsx"]
 
 [ext_resource type="Script" uid="uid://enmptpa4suo2" path="res://core/world/level_test_01.gd" id="1_sdb2i"]
 [ext_resource type="Script" uid="uid://d02pk7cw5xpp5" path="res://core/utility/level_control.gd" id="2_qn0q0"]
 [ext_resource type="TileSet" uid="uid://d21ninfolaj2t" path="res://core/world/tile/functioning_tile_set.tres" id="3_sy46e"]
 [ext_resource type="PackedScene" uid="uid://b6mw1wvhx5lct" path="res://core/item/collectable.tscn" id="4_ja4ap"]
 [ext_resource type="PackedScene" uid="uid://c4w1g61eov4xe" path="res://core/item/kitty_collect.tscn" id="5_8o5rc"]
-[ext_resource type="PackedScene" uid="uid://b2053dc6nqylb" path="res://experiments/kitteh_wheel/kitteh_wheel.tscn" id="6_kdv1a"]
+[ext_resource type="PackedScene" uid="uid://b2053dc6nqylb" path="res://experiments/kitteh/kitteh_wheel/kitteh_wheel.tscn" id="6_kdv1a"]
 [ext_resource type="Script" uid="uid://nes2pqd0g30u" path="res://core/world/experiment_tile_map.gd" id="7_fnssb"]
 [ext_resource type="Texture2D" uid="uid://rhukjdkpus85" path="res://assets/md0/md0-mossyfog_saftey-grate_p220928.png" id="8_v4y3o"]
 [ext_resource type="PackedScene" uid="uid://xa55c4w1wd1w" path="res://core/playable/tiny_cat.tscn" id="9_iyntd"]

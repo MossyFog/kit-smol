@@ -1,34 +1,9 @@
 [gd_scene format=3 uid="uid://uk8ugop8wmel"]
 
 [ext_resource type="Script" uid="uid://k267ldu510l4" path="res://core/ui/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Script" uid="uid://bnb0ecl7ucol4" path="res://experiments/menu_gradient_thing.gd" id="2_gsiyq"]
-[ext_resource type="Script" uid="uid://c0y5mjwu13ka4" path="res://experiments/menu_slider_thing.gd" id="3_4mmo1"]
+[ext_resource type="PackedScene" uid="uid://bskcx8ehaati8" path="res://experiments/main_menu_temp/slider_test.tscn" id="2_5v4om"]
 
-[sub_resource type="Curve" id="Curve_ekxnf"]
-_data = [Vector2(0.12, 0.213), -4.4919753, -4.4919753, 0, 0, Vector2(1, 0.213), 0.0, 0.0, 0, 0, Vector2(1, 0.213), -73.72997, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_bqqt6"]
-curve = SubResource("Curve_ekxnf")
-
-[sub_resource type="GDScript" id="GDScript_gsiyq"]
-script/source = "extends Label
-
-func _make_custom_tooltip(for_text: String) -> Object:
-	var label = Label.new()
-	label.text = text
-	label.theme = load(\"res://core/ui/tooltip_theme.tres\")
-	return label
-"
-
-[sub_resource type="Curve" id="Curve_wu84c"]
-_data = [Vector2(0.20207256, 0.47191018), -4.4919753, -4.4919753, 0, 0, Vector2(0.892, 0.472), 0.0, 0.0, 0, 0, Vector2(0.902, 0.472), -11.204121, -11.204121, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_8ln24"]
-curve = SubResource("Curve_wu84c")
-
-[node name="MainMenu" type="Control" unique_id=1044683012]
+[node name="KSMainMenu" type="Control" unique_id=1044683012 node_paths=PackedStringArray("slider_test_1", "slider_test_2")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,6 +15,8 @@ mouse_filter = 2
 mouse_behavior_recursive = 1
 accessibility_name = "main menu"
 script = ExtResource("1_l6cm7")
+slider_test_1 = NodePath("Center/Panel/Margin/MenuVBox/SliderTest")
+slider_test_2 = NodePath("Center/Panel/Margin/MenuVBox/SliderTest2")
 
 [node name="Center" type="CenterContainer" parent="." unique_id=1435944780]
 layout_mode = 1
@@ -79,80 +56,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "❌"
 
-[node name="HBoxMain1" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox" unique_id=973483949]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Panel" type="PanelContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain1" unique_id=123103662]
-custom_minimum_size = Vector2(100, 100)
+[node name="SliderTest" parent="Center/Panel/Margin/MenuVBox" unique_id=1516322767 instance=ExtResource("2_5v4om")]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel" unique_id=1180880636]
+[node name="SliderTest2" parent="Center/Panel/Margin/MenuVBox" unique_id=994885393 instance=ExtResource("2_5v4om")]
 layout_mode = 2
-
-[node name="Gradient" type="TextureRect" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox" unique_id=39334676]
-layout_mode = 2
-size_flags_vertical = 3
-texture = SubResource("CurveTexture_bqqt6")
-script = ExtResource("2_gsiyq")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox" unique_id=629425961]
-layout_mode = 2
-
-[node name="LabelSlider" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HBoxContainer" unique_id=214971029]
-layout_mode = 2
-text = "Some Slidey Thing: "
-
-[node name="LabelVal" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HBoxContainer" unique_id=2079099911]
-layout_mode = 2
-mouse_filter = 1
-text = "???"
-script = SubResource("GDScript_gsiyq")
-
-[node name="HSlider" type="HSlider" parent="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox" unique_id=1744189169]
-layout_mode = 2
-script = ExtResource("3_4mmo1")
-
-[node name="HBoxMain2" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox" unique_id=1150050123]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Panel" type="PanelContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain2" unique_id=1650122672]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel" unique_id=1482046882]
-layout_mode = 2
-
-[node name="Gradient" type="TextureRect" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox" unique_id=1671371145]
-layout_mode = 2
-size_flags_vertical = 3
-texture = SubResource("CurveTexture_8ln24")
-script = ExtResource("2_gsiyq")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox" unique_id=365867098]
-layout_mode = 2
-
-[node name="LabelSlider" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HBoxContainer" unique_id=38508221]
-layout_mode = 2
-text = "Some Slidey Thing: "
-
-[node name="LabelVal" type="Label" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HBoxContainer" unique_id=1548654751]
-layout_mode = 2
-text = "???"
-
-[node name="HSlider" type="HSlider" parent="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox" unique_id=1061136609]
-layout_mode = 2
-script = ExtResource("3_4mmo1")
 
 [connection signal="pressed" from="Center/Panel/Margin/MenuVBox/TitleBar/Close" to="." method="_on_button_close_pressed"]
-[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/Gradient" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" method="_on_value_changed"]
-[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/Gradient" method="_on_h_slider_value_changed"]
-[connection signal="value_changed_2" from="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/Gradient" method="_on_h_slider_value_changed_2"]
-[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/Gradient" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/Gradient" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" method="_on_value_changed"]
-[connection signal="value_changed_2" from="Center/Panel/Margin/MenuVBox/HBoxMain2/Panel/VBox/HSlider" to="Center/Panel/Margin/MenuVBox/HBoxMain1/Panel/VBox/Gradient" method="_on_h_slider_value_changed_2"]

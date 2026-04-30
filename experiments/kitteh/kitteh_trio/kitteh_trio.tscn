@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://duvnn0j5rekkt"]
 
-[ext_resource type="Script" uid="uid://ctcqg5gppk1wd" path="res://experiments/kitteh_trio/kitteh_trio.gd" id="1_m15kt"]
+[ext_resource type="Script" uid="uid://ctcqg5gppk1wd" path="res://experiments/kitteh/kitteh_trio/kitteh_trio.gd" id="1_m15kt"]
 [ext_resource type="Texture2D" uid="uid://bd5144ubv0lih" path="res://assets/cc0/tinycat_kirisoft/tinycat11x11.png" id="2_xrf25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fmcma"]

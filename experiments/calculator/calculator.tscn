@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://n2kkml11iww7"]
+[gd_scene format=3 uid="uid://n2kkml11iww7"]
 
-[ext_resource type="Script" uid="uid://bfudxebfrplmm" path="res://experiments/calc_button.gd" id="1_538ls"]
+[ext_resource type="Script" uid="uid://bfudxebfrplmm" path="res://experiments/calculator/calc_button.gd" id="1_538ls"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvcfd"]
 bg_color = Color(0.40443814, 0.59608823, 0.93189055, 1)
@@ -14,9 +14,9 @@ border_width_bottom = 1
 bg_color = Color(0.40443814, 0.59608823, 0.41551143, 1)
 skew = Vector2(0.17, 0)
 
-[node name="Calculator" type="CanvasLayer"]
+[node name="Calculator" type="CanvasLayer" unique_id=1251442327]
 
-[node name="Window" type="Window" parent="."]
+[node name="Window" type="Window" parent="." unique_id=23120472]
 oversampling_override = 1.0
 title = "KIT SMOL Calculator"
 position = Vector2i(0, 36)
@@ -25,7 +25,7 @@ min_size = Vector2i(100, 100)
 content_scale_mode = 1
 content_scale_aspect = 1
 
-[node name="Control" type="Control" parent="Window"]
+[node name="Control" type="Control" parent="Window" unique_id=1340884471]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 3
 anchors_preset = 15
@@ -36,7 +36,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control" unique_id=397503419]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 15
@@ -45,11 +45,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Window/Control/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Window/Control/VBoxContainer" unique_id=1516040104]
 custom_minimum_size = Vector2(80, 40)
 layout_mode = 2
 
-[node name="Result" type="RichTextLabel" parent="Window/Control/VBoxContainer/PanelContainer"]
+[node name="Result" type="RichTextLabel" parent="Window/Control/VBoxContainer/PanelContainer" unique_id=690508766]
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -57,20 +57,20 @@ size_flags_vertical = 4
 tooltip_text = "Result"
 text = "1 + 1 = MEOWZA"
 
-[node name="CenterContainer" type="CenterContainer" parent="Window/Control/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Window/Control/VBoxContainer" unique_id=919462479]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer" unique_id=1302771028]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1178142686]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer" unique_id=784176934]
 layout_mode = 2
 columns = 3
 
-[node name="Seven" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="Seven" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=979992088]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -79,7 +79,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "7"
 script = ExtResource("1_538ls")
 
-[node name="Eight" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="Eight" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1523727154]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -87,7 +87,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "8"
 
-[node name="Nine" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="Nine" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1760457623]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -95,7 +95,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "9"
 
-[node name="Four" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="Four" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1749201962]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -103,7 +103,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "4"
 
-[node name="Five" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="Five" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=974680581]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -111,7 +111,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "5"
 
-[node name="Six" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="Six" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=792186100]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -119,7 +119,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "6"
 
-[node name="One" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="One" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=2003638771]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -127,7 +127,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "1"
 
-[node name="Two" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="Two" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1147217892]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -135,7 +135,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "2"
 
-[node name="Three" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer"]
+[node name="Three" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1614736507]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -143,10 +143,10 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "3"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer" unique_id=577476901]
 layout_mode = 2
 
-[node name="Zero" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Zero" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1072010771]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -154,7 +154,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "0"
 
-[node name="Equals" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Equals" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1409756350]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -164,10 +164,10 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvcfd")
 text = "="
 
-[node name="GridContainer2" type="GridContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="GridContainer2" type="GridContainer" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer" unique_id=146121317]
 layout_mode = 2
 
-[node name="Divide" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2"]
+[node name="Divide" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2" unique_id=1793306798]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -175,7 +175,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_dqxml")
 text = "/"
 
-[node name="Multiply" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2"]
+[node name="Multiply" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2" unique_id=958261218]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -183,7 +183,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_dqxml")
 text = "*"
 
-[node name="Plus" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2"]
+[node name="Plus" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2" unique_id=751089564]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12
@@ -191,7 +191,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_dqxml")
 text = "+"
 
-[node name="Minus" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2"]
+[node name="Minus" type="Button" parent="Window/Control/VBoxContainer/CenterContainer/HBoxContainer/GridContainer2" unique_id=1453582073]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_constants/outline_size = 12

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://jsckbhnfbm5o"]
+[gd_scene format=3 uid="uid://jsckbhnfbm5o"]
 
-[ext_resource type="Script" uid="uid://feya1fk2j0bh" path="res://level_select_dropdown.gd" id="1_di322"]
+[ext_resource type="Script" uid="uid://feya1fk2j0bh" path="res://experiments/kitteh/level_select_dropdown.gd" id="1_di322"]
 
 [node name="LevelSelector" type="Control"]
 layout_mode = 3

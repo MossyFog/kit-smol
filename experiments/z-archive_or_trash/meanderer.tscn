@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://cn4bawwebgvwh"]
 
-[ext_resource type="Texture2D" uid="uid://ddsdbnxkx0gbv" path="res://experiments/Tileset.png" id="1_aobwr"]
+[ext_resource type="Texture2D" uid="uid://ddsdbnxkx0gbv" path="res://assets/cc0/Tileset.png" id="1_cmgfm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kx1vx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_piwc8"]
-texture = ExtResource("1_aobwr")
+texture = ExtResource("1_cmgfm")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0

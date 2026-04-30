@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bskcx8ehaati8"]
+
+[ext_resource type="Script" uid="uid://bp8yr2x5wldir" path="res://experiments/main_menu_temp/slider_test.gd" id="1_u8lf1"]
+[ext_resource type="Script" uid="uid://bnb0ecl7ucol4" path="res://experiments/main_menu_temp/menu_gradient_thing.gd" id="2_d123l"]
+[ext_resource type="Script" uid="uid://c0y5mjwu13ka4" path="res://experiments/main_menu_temp/menu_slider_thing.gd" id="3_etie5"]
+
+[sub_resource type="Curve" id="Curve_5v4om"]
+resource_local_to_scene = true
+_data = [Vector2(0.12, 0.213), -4.4919753, -4.4919753, 0, 0, Vector2(1, 0.213), 0.0, 0.0, 0, 0, Vector2(1, 0.213), -73.72997, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bqqt6"]
+resource_local_to_scene = true
+curve = SubResource("Curve_5v4om")
+
+[sub_resource type="GDScript" id="GDScript_gsiyq"]
+script/source = "extends Label
+
+@onready var tooltip_theme = load(\"res://core/ui/tooltip_theme.tres\")
+
+func _get_tooltip(at_position: Vector2) -> String:
+	return text + str(at_position)
+
+func _make_custom_tooltip(for_text: String) -> Object:
+	var label = Label.new()
+	label.text = for_text
+	label.theme = tooltip_theme
+	return label
+"
+
+[node name="SliderTest" type="PanelContainer" unique_id=1516322767]
+custom_minimum_size = Vector2(100, 100)
+script = ExtResource("1_u8lf1")
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=944311704]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1056016117]
+layout_mode = 2
+
+[node name="Gradient" type="TextureRect" parent="VBox" unique_id=1396095284]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("CurveTexture_bqqt6")
+script = ExtResource("2_d123l")
+
+[node name="HBox" type="HBoxContainer" parent="VBox" unique_id=407130030]
+layout_mode = 2
+
+[node name="LabelSlider" type="Label" parent="VBox/HBox" unique_id=950409271]
+layout_mode = 2
+text = "Some Slidey Thing: "
+
+[node name="LabelVal" type="Label" parent="VBox/HBox" unique_id=1454656697]
+layout_mode = 2
+tooltip_text = "?"
+mouse_filter = 1
+text = "???"
+script = SubResource("GDScript_gsiyq")
+
+[node name="HSlider" type="HSlider" parent="VBox" unique_id=1641440219]
+layout_mode = 2
+script = ExtResource("3_etie5")
+
+[connection signal="value_changed" from="VBox/HSlider" to="VBox/Gradient" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="VBox/HSlider" to="VBox/HSlider" method="_on_value_changed"]

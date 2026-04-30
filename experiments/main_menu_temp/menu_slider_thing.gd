@@ -1,7 +1,7 @@
 extends HSlider
 
 signal value_changed_2
-@onready var label_val: Label = $"../HBoxContainer/LabelVal"
+@onready var label_val: Label = $"../HBox/LabelVal"
 
 func _ready() -> void:
 	pass
