@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://k267ldu510l4" path="res://core/ui/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://bskcx8ehaati8" path="res://experiments/main_menu_temp/slider_test.tscn" id="2_5v4om"]
+[ext_resource type="Theme" uid="uid://bk4aufa0ig12i" path="res://core/ui/button_theme_1.tres" id="2_gsiyq"]
 
 [node name="KSMainMenu" type="Control" unique_id=1044683012 node_paths=PackedStringArray("slider_test_1", "slider_test_2")]
 layout_mode = 3
@@ -15,8 +16,8 @@ mouse_filter = 2
 mouse_behavior_recursive = 1
 accessibility_name = "main menu"
 script = ExtResource("1_l6cm7")
-slider_test_1 = NodePath("Center/Panel/Margin/MenuVBox/SliderTest")
-slider_test_2 = NodePath("Center/Panel/Margin/MenuVBox/SliderTest2")
+slider_test_1 = NodePath("Center/Panel/Margin/MenuVBox/MainH/Center/SliderTest")
+slider_test_2 = NodePath("Center/Panel/Margin/MenuVBox/MainH/Center/SliderTest2")
 
 [node name="Center" type="CenterContainer" parent="." unique_id=1435944780]
 layout_mode = 1
@@ -56,10 +57,36 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "❌"
 
-[node name="SliderTest" parent="Center/Panel/Margin/MenuVBox" unique_id=1516322767 instance=ExtResource("2_5v4om")]
+[node name="MainH" type="HBoxContainer" parent="Center/Panel/Margin/MenuVBox" unique_id=249954282]
 layout_mode = 2
 
-[node name="SliderTest2" parent="Center/Panel/Margin/MenuVBox" unique_id=994885393 instance=ExtResource("2_5v4om")]
+[node name="Side" type="VBoxContainer" parent="Center/Panel/Margin/MenuVBox/MainH" unique_id=2046120845]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Center/Panel/Margin/MenuVBox/MainH/Side" unique_id=1702723515]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme = ExtResource("2_gsiyq")
+text = "NEW"
+
+[node name="Button2" type="Button" parent="Center/Panel/Margin/MenuVBox/MainH/Side" unique_id=1569477182]
+layout_mode = 2
+text = "Huh?"
+
+[node name="Button3" type="Button" parent="Center/Panel/Margin/MenuVBox/MainH/Side" unique_id=345790006]
+layout_mode = 2
+text = "?
+?
+?"
+
+[node name="Center" type="VBoxContainer" parent="Center/Panel/Margin/MenuVBox/MainH" unique_id=145852374]
+layout_mode = 2
+
+[node name="SliderTest" parent="Center/Panel/Margin/MenuVBox/MainH/Center" unique_id=1516322767 instance=ExtResource("2_5v4om")]
+layout_mode = 2
+
+[node name="SliderTest2" parent="Center/Panel/Margin/MenuVBox/MainH/Center" unique_id=994885393 instance=ExtResource("2_5v4om")]
 layout_mode = 2
 
 [connection signal="pressed" from="Center/Panel/Margin/MenuVBox/TitleBar/Close" to="." method="_on_button_close_pressed"]

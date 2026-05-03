@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d0gxpisf7caer"]
+
+[node name="GlobalsDashboard" type="Node" unique_id=1104156972]
+
+[node name="Control" type="Control" parent="." unique_id=614064822]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
