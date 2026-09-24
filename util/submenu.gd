@@ -1,5 +1,7 @@
 class_name Submenu
 extends Node
+## A [Submenu] is a
+
 
 var name_menu : String
 var node : PopupMenu

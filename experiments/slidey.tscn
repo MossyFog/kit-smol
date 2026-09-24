@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://4v467t10gby3"]
+
+[ext_resource type="Script" uid="uid://dx1yny12eldwx" path="res://experiments/slidey.gd" id="1_4h6gx"]
+[ext_resource type="Animation" uid="uid://croescn5l466q" path="res://experiments/curve_animation.res" id="2_p3043"]
+[ext_resource type="PackedScene" uid="uid://xa55c4w1wd1w" path="res://core/playable/tiny_cat.tscn" id="3_wgtbr"]
+
+[sub_resource type="Animation" id="Animation_mqbg4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TinyCat:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TinyCat:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bbc74"]
+_data = {
+&"RESET": SubResource("Animation_mqbg4"),
+&"curve_animation": ExtResource("2_p3043")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_i6a2d"]
+
+[node name="Slidey" type="Node2D" unique_id=120448624]
+script = ExtResource("1_4h6gx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=333764943]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1061366527]
+build_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1582251851]
+libraries/ = SubResource("AnimationLibrary_bbc74")
+
+[node name="TinyCat" parent="." unique_id=780185843 instance=ExtResource("3_wgtbr")]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1869409595]
+curve = SubResource("Curve2D_i6a2d")

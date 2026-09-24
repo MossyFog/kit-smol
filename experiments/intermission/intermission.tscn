@@ -106,6 +106,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 32.0
+offset_right = -5.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 border_color = Color(0.8666667, 0, 0.85882354, 0.47058824)
@@ -128,7 +132,6 @@ text = "Intermission Designer"
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 2
 size_flags_vertical = 3
-scroll_vertical = 718
 script = SubResource("GDScript_kvpf5")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/ScrollContainer" unique_id=1434026950]
@@ -150,7 +153,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 56
 bbcode_enabled = true
-text = "[rainbow freq=0.01 sat=0.9 val=0.9 speed=26.0][wave amp=100.0 freq=1.0 connected=1][tornado radius=8.0 freq=4.6 connected=1]Studying Egyptian Heiroglyphs [/tornado][/wave] [/rainbow]"
+text = "[rainbow freq=0.01 sat=0.9 val=0.9 speed=26.0][wave amp=100.0 freq=1.0 connected=1][tornado radius=8.0 freq=4.6 connected=1]Tenpo-Toki
+Pona-Pona
+~~  ~  ~~~  `~/
+////------_____
+AWAKEYY :3[/tornado][/wave] [/rainbow]"
 fit_content = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1230251425]

@@ -35,11 +35,19 @@ var _top_popupmenu_lambda = func() -> PopupMenu:
 @onready var help 	: PopupMenu = _top_popupmenu_lambda.call()
 @onready var about 	:= Submenu.new(\"About...\", help).add_to(_submenus)
 
-@onready var lbl : Label = $\"../../PanelContainer/TabContainer/Debuggery\"
+@onready var lbl : Label = %Debuggery
 
 func _ready() -> void:
 	_build_submenus()
-	
+	# TEST ZONE
+	var sm := PopupMenu.new()
+	sm.name = \"Test\"
+	$Help.add_child(sm)
+	$Help.add_submenu_node_item(\"Toast\", sm)
+	sm.add_submenu_node_item(\"Toast\", sm.duplicate())
+	sm.add_submenu_node_item(\"Teest\", sm.duplicate())
+	sm.add_submenu_node_item(\"Tots\", sm.duplicate())
+	# TEST ZONE END
 
 func _build_submenus():
 	var depth : int = 0
@@ -49,10 +57,10 @@ func _build_submenus():
 	
 	for i in _submenus:
 		var depth_at_least : int = 1
-		if i.get_children_count() > 0:
+		if i.get_child_count() > 0:
 			depth_at_least = 2 #TODO 2025-12-05
 			for each_child in i:
-				pass
+				each_child.node.add_submenu_item(i.node)
 	#var sm = get_submenu_data()
 
 
@@ -64,7 +72,7 @@ func get_submenu_data() -> Array[PopupMenu]:
 
 [node name="Window" type="Window" unique_id=222777230]
 oversampling_override = 1.0
-position = Vector2i(210, 60)
+position = Vector2i(210, 36)
 size = Vector2i(400, 400)
 exclusive = true
 popup_window = true
@@ -115,6 +123,7 @@ layout_mode = 2
 current_tab = 0
 
 [node name="Debuggery" type="Label" parent="PanelContainer/TabContainer" unique_id=99717824]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 200)
 layout_mode = 2
 size_flags_horizontal = 8

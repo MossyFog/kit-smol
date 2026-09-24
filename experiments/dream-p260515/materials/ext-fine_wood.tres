@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dne6hkri2r1bg"]
+
+[ext_resource type="Texture2D" uid="uid://ji6txvbu1hl5" path="res://experiments/4K-wood_fine_14-diffuse.jpg" id="1_oyyvu"]
+[ext_resource type="Texture2D" uid="uid://vlnxkpj7m0f0" path="res://experiments/4K-wood_fine_14-normal.jpg" id="2_fyxw4"]
+
+[resource]
+albedo_texture = ExtResource("1_oyyvu")
+normal_enabled = true
+normal_texture = ExtResource("2_fyxw4")

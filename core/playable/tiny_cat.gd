@@ -43,8 +43,8 @@ func _process(_delta: float) -> void:
 	var pressing_up    : bool = Input.is_action_pressed("up")
 	var released_up : bool = Input.is_action_just_released("down")
 	var pressing_jump  : bool = Input.is_action_pressed("jump")
-	var scroll_up      : bool = Input.is_action_pressed("scroll_up")
-	var scroll_down    : bool = Input.is_action_pressed("scroll_down")
+	var scroll_up      : bool = Input.is_action_just_pressed("scroll_up")
+	var scroll_down    : bool = Input.is_action_just_pressed("scroll_down")
 	var launch         : bool = Input.is_action_pressed("attack1")
 	
 	# Do inputs 🎬
