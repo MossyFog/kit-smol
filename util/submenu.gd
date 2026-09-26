@@ -1,11 +1,12 @@
 class_name Submenu
 extends Node
-## A [Submenu] is a
+## A [Submenu] is a [Node] which
 
 
 var name_menu : String
 var node : PopupMenu
 var designated_parent : Node
+var has_subsubmenu : bool
 
 func _init(p_name : String, parent : Node) -> void:
 	designated_parent = parent
