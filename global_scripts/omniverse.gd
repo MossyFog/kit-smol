@@ -20,7 +20,7 @@ func _ready() -> void:
 		current_universe = new_universe
 	
 
-func setup_physics(physicsSet) -> void:
+func setup_physics(_physicsSet) -> void:
 	pass
 
 func make_universe() -> Universe:

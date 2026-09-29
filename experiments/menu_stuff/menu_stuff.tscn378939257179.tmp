@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpcnbcy40a1s1"]
 
 [ext_resource type="Texture2D" uid="uid://bd5144ubv0lih" path="res://assets/cc0/tinycat_kirisoft/tinycat11x11.png" id="1_fo7eb"]
+[ext_resource type="Script" uid="uid://bm3ppt17qrj8n" path="res://experiments/menu_stuff/wow.gd" id="1_xx0t7"]
 [ext_resource type="Script" uid="uid://cxbkgra88y7gf" path="res://experiments/menu_stuff/label.gd" id="2_rdrwd"]
 [ext_resource type="PackedScene" uid="uid://dt0mpk8o5m6an" path="res://experiments/intermission/intermission.tscn" id="4_b78fy"]
 
@@ -9,13 +10,12 @@ script/source = "extends MenuBar
 
 @onready var _submenus : Array
 
-var _top_popupmenu_lambda = func(menu_name : String) -> PopupMenu:
+var _top_popupmenu_lambda = func() -> PopupMenu:
 	var popup_menu = PopupMenu.new()
-	popup_menu.name = menu_name
 	_submenus.push_back(popup_menu)
 	return popup_menu
 
-@onready var file_menu : PopupMenu = _top_popupmenu_lambda.call(\"File\")
+@onready var file_menu : PopupMenu = _top_popupmenu_lambda.call()
 @onready var open 		 := Submenu.new(\"Open...\", file_menu).add_to(_submenus)
 @onready var reopen_last := Submenu.new(\"Reopen Last\", file_menu).add_to(_submenus)
 @onready var save 		 := Submenu.new(\"Save\", file_menu).add_to(_submenus)
@@ -23,16 +23,16 @@ var _top_popupmenu_lambda = func(menu_name : String) -> PopupMenu:
 @onready var save_all 	 := Submenu.new(\"Save All\", file_menu).add_to(_submenus)
 @onready var quit 		 := Submenu.new(\"Quit\", file_menu).add_to(_submenus)
 
-@onready var projectMenu : PopupMenu = _top_popupmenu_lambda.call(\"Project\")
+@onready var projectMenu : PopupMenu = _top_popupmenu_lambda.call()
 @onready var projectSettings := Submenu.new(\"Project Settings...\", projectMenu).add_to(_submenus)
 
-@onready var fun 	: PopupMenu = _top_popupmenu_lambda.call(\"Fun\")
+@onready var fun 	: PopupMenu = _top_popupmenu_lambda.call()
 @onready var play 	:= Submenu.new(\"Play\", fun).add_to(_submenus)
 
-@onready var editor 		: PopupMenu = _top_popupmenu_lambda.call(\"Editor\")
+@onready var editor 		: PopupMenu = _top_popupmenu_lambda.call()
 @onready var editorSettings := Submenu.new(\"Editor Settings...\", editor).add_to(_submenus)
 
-@onready var help 	: PopupMenu = _top_popupmenu_lambda.call(\"Help\")
+@onready var help 	: PopupMenu = _top_popupmenu_lambda.call()
 @onready var about 	:= Submenu.new(\"About...\", help).add_to(_submenus)
 
 @onready var lbl : Label = %Debuggery
@@ -49,11 +49,6 @@ func _ready() -> void:
 	#sm.add_submenu_node_item(\"Tots\", sm.duplicate())
 	## TEST ZONE END
 
-func _new_menu(name : String, is_submenu = false) -> Variant:
-	if is_submenu:
-		var new_submenu = Submenu.new(name)
-		return new_submenu
-
 func _build_submenus():
 	var depth : int = 0
 	var submenu_array_size = _submenus.size()
@@ -62,10 +57,8 @@ func _build_submenus():
 	
 	for i in _submenus:
 		var depth_at_least : int = 1
-		depth = depth_at_least
 		if i.get_child_count() > 0:
 			depth_at_least = 2 #TODO 2025-12-05
-			depth = depth_at_least
 			for each_child in i:
 				each_child.node.add_submenu_item(i.node)
 	#var sm = get_submenu_data()
@@ -75,22 +68,16 @@ func _build_submenus_2() -> void:
 	var submenus_only : Array[Submenu]
 	# First split, so parent/popups can go first
 	for i in _submenus:
-		if i is PopupMenu:
-			popupmenus_only.push_back(i)
-		elif i is Submenu:
+		if i is Submenu:
 			submenus_only.push_back(i)
-		
+		elif i is PopupMenu:
+			popupmenus_only.push_back(i)
 	# Parents/popups go first
 	for i in popupmenus_only:
-		print(\"PopupMenusOnly\")
-		print(i.name)
 		self.add_child(i)
 	# Submenus now
 	for i in submenus_only:
-		print(\"SubmenusOnly\")
-		print(i.name_menu)
-		var parent_match = popupmenus_only. find(i.designated_parent)
-		popupmenus_only[parent_match].add_submenu_node_item(i.name_menu, i.node)
+		i.node.add_sumbenu_node_item(i.name_menu, i.designated_parent)
 
 func get_submenu_data() -> Array[PopupMenu]:
 	var submenu_data : Array[PopupMenu]
@@ -99,7 +86,6 @@ func get_submenu_data() -> Array[PopupMenu]:
 "
 
 [node name="Window" type="Window" unique_id=222777230]
-editor_description = "An experimental window-y scene for messing with PopupMenus(and Submenus)."
 oversampling_override = 1.0
 position = Vector2i(210, 36)
 size = Vector2i(400, 400)
@@ -116,7 +102,7 @@ script = SubResource("GDScript_b78fy")
 
 [node name="File" type="PopupMenu" parent="VBoxContainer/MenuBar" unique_id=2048678523]
 oversampling_override = 1.0
-size = Vector2i(236, 116)
+size = Vector2i(227, 116)
 submenu_popup_delay = 0.03
 item_count = 4
 item_0/text = "New Kitty..."
@@ -129,6 +115,7 @@ item_2/text = "Huh?"
 item_2/id = 2
 item_3/text = "QUIT (this dang program)"
 item_3/id = 3
+script = ExtResource("1_xx0t7")
 
 [node name="Help" type="PopupMenu" parent="VBoxContainer/MenuBar" unique_id=546699406]
 oversampling_override = 1.0

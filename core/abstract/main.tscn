@@ -14,10 +14,10 @@ main_node_2d = NodePath("Main2D")
 
 [node name="Main2D" parent="." unique_id=768863711 instance=ExtResource("3_sceu4")]
 
-[node name="ExperimentTileMap" parent="Main2D/Tiles" index="2"]
+[node name="ExperimentTileMap" parent="Main2D/Tiles" parent_id_path=PackedInt32Array(768863711, 2024172657) index="2" unique_id=1643287634]
 tile_map_data = PackedByteArray(0, 0, 12, 0, 251, 255, 0, 0, 0, 0, 0, 0, 1, 0, 245, 255, 253, 255, 0, 0, 0, 0, 0, 0, 1, 0, 7, 0, 248, 255, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 249, 255, 0, 0, 0, 0, 0, 0, 1, 0)
 
-[node name="Launcher" parent="Main2D/TinyCat" index="4" unique_id=1089094282]
+[node name="Launcher" parent="Main2D/TinyCat" parent_id_path=PackedInt32Array(768863711, 1154091269) index="4" unique_id=1089094282]
 launch_direction = null
 launch_pulse = null
 launch_delay = null
