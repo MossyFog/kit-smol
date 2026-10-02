@@ -49,10 +49,13 @@ func _ready() -> void:
 	#sm.add_submenu_node_item(\"Tots\", sm.duplicate())
 	## TEST ZONE END
 
-func _new_menu(name : String, is_submenu = false) -> Variant:
-	if is_submenu:
-		var new_submenu = Submenu.new(name)
-		return new_submenu
+func _new_menu(name : String, is_submenu = true) -> Variant:
+	if is_submenu: 
+		return Submenu.new(name)
+	else:
+		var new_popupmenu = PopupMenu.new()
+		new_popupmenu.name = name
+		return new_popupmenu
 
 func _build_submenus():
 	var depth : int = 0
