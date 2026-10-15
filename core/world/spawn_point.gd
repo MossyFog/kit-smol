@@ -6,7 +6,7 @@ enum EntityType {
 }
 
 @export var entity_to_spawn : EntityType
-var governing_respawnery : Respawnery
+var governing_respawnery := Respawnery.new()
 
 
 func _ready() -> void:

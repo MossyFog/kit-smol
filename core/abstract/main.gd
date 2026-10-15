@@ -8,6 +8,8 @@ extends Node
 @export var main_node_2d : Node2D
 
 
+
+
 func _init() -> void:
 	print_debug("Main initializing(_init)")
 

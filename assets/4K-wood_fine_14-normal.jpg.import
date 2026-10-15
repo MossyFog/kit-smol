@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vlnxkpj7m0f0"
-path.s3tc="res://.godot/imported/4K-wood_fine_14-normal.jpg-4e1153c3aac3605261686ed6eb12294f.s3tc.ctex"
+path.s3tc="res://.godot/imported/4K-wood_fine_14-normal.jpg-5637537cea640d10d2ed777a8173b5fd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://experiments/4K-wood_fine_14-normal.jpg"
-dest_files=["res://.godot/imported/4K-wood_fine_14-normal.jpg-4e1153c3aac3605261686ed6eb12294f.s3tc.ctex"]
+source_file="res://assets/4K-wood_fine_14-normal.jpg"
+dest_files=["res://.godot/imported/4K-wood_fine_14-normal.jpg-5637537cea640d10d2ed777a8173b5fd.s3tc.ctex"]
 
 [params]
 

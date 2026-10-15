@@ -20,6 +20,9 @@ static func fill_submenus(submenus : Array[Submenu], _parent: PopupMenu) -> Arra
 				#j.add_submenu_node_item(k.name, k)
 		#lbl.text = (lbl.text + "\n" + str(i.name) + " added.")
 	
+	#OS.move_to_trash()
+	#Error.FAILED
+	
 	return new_submenus
 
 static func populate_test_submenus(_parent: PopupMenu) -> Array[Submenu]:
